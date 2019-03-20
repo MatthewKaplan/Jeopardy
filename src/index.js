@@ -1,3 +1,5 @@
+import Game from './Game.js';
+
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file
 
@@ -8,12 +10,11 @@ import $ from 'jquery';
 import './css/base.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
 import domUpdates from './domUpdates.js';
 
+let game = new Game();
 
 $('.play-game-btn').on('click', function(e){
   e.preventDefault();
-  domUpdates.hideStartScreen();
-  domUpdates.grabNames();
+  game.startGame();
 });
