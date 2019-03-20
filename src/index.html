@@ -1,13 +1,131 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Gametime Starter Kit</title>
-  </head>
-  <body>
-    <h1>Gametime Starter Kit</h1>
+<html>
+<head>
+  <title>Game Time</title>
+  <link rel="stylesheet" type="text/css" href="base.css">
+</head>
+<body>
+  <h1>The Citadel of Ricks Jeopordy</h1>
+  <h2>Choose a Rick:</h2>
+  <section class="players">
+    <div class="rick1">
+      <img class="rick-sanchez" src="https://i.imgur.com/GdkebcX.png" height="200" width="150"><br>
+      <label for="player1">Player Name:</label>
+      <input type="text" name="player1" id="player1">
+    </div>  
+    <div class="rick2">
+      <img class="rick-sanchez" src="https://i.imgur.com/CVtT9J8.png" height="200" width="150"><br>
+      <label for="player2">Player Name:</label>
+      <input type="text" name="player2" id="player2">
+    </div>  
+    <div class="rick3">
+      <img class="rick-sanchez" src="https://i.imgur.com/J4EM0ux.png" height="200" width="350"><br>
+      <label for="player3">Player Name:</label>
+      <input type="text" name="player3" id="player3">
+    </div>  
+  </section>
+  <section class="btn">
+    <button class="play-game-btn" type="submit">Play Game</button>
+    <!-- <img class="portal" src="images/portal.png" height="300" width="200"> -->
+  </section>
+  <header>
+    <section class="header-bar">
+      <div class="round">
+        <h3>Round X</h3>
+      </div>
+      <div class="game-name">
+        <h3>Jeopardy</h3>
+      </div>
+      <div class="reset-game">
+        <h3>Reset Game</h3>
+      </div>
+    </section> 
+  </header>
 
-    <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
-  </body>
+  <section class="game none">
+    <section class="question-box-area">
+      <section class="categories-container">
+        <div class="categories-box">
+          <h3>Topic 1</h3>
+        </div>
+        <div class="categories-box">
+          <h3>Topic 2</h3>
+        </div>
+        <div class="categories-box">
+          <h3>Topic 3</h3>
+        </div>
+        <div class="categories-box">
+          <h3>Topic 4</h3>
+        </div>
+      </section>
+      <section class="questions-container">
+        <div class="box">
+          <h2>$100</h2>
+        </div>
+        <div class="box">
+          <h2>$200</h2>
+        </div>
+        <div class="box">
+          <h2>$300</h2>
+        </div>
+        <div class="box">
+          <h2>$400</h2>
+        </div>
+        <div class="box">
+          <h2>$100</h2>
+        </div>
+        <div class="box">
+          <h2>$200</h2>
+        </div>
+        <div class="box">
+          <h2>$300</h2>
+        </div>
+        <div class="box">
+          <h2>$400</h2>
+        </div>
+        <div class="box">
+          <h2>$100</h2>
+        </div>
+        <div class="box">
+          <h2>$200</h2>
+        </div>
+        <div class="box">
+          <h2>$300</h2>
+        </div>
+        <div class="box">
+          <h2>$400</h2>
+        </div>
+        <div class="box">
+          <h2>$100</h2>
+        </div>
+        <div class="box">
+          <h2>$200</h2>
+        </div>
+        <div class="box">
+          <h2>$300</h2>
+        </div>
+        <div class="box">
+          <h2>$400</h2>
+        </div>
+      </section>
+    </section>
+  </section>
+  <section class="player-section">
+      <div class="player-1">
+        <img class="rick-sanchez" src="https://i.imgur.com/GdkebcX.png" height="200" width="150">
+        <h3>Player 1:</h3>
+        <h3>Score:</h3>
+      </div>
+      <div class="player-2">
+        <img class="rick-sanchez" src="https://i.imgur.com/CVtT9J8.png" height="200" width="150">
+        <h3>Player 2:</h3>
+        <h3>Score:</h3>
+      </div>
+      <div class="player-3">
+        <img class="rick-sanchez" src="https://i.imgur.com/J4EM0ux.png" height="200" width="350">
+        <h3>Player 3:</h3>
+        <h3>Score:</h3>
+      </div>
+    </section> 
+</body>
 </html>
