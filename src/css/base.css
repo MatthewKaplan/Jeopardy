@@ -14,6 +14,20 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-family: "Get Schwifty";
+  -webkit-text-stroke: .5px #97ce4c;
+   color: #35c9dd;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  font-size: 70px;
+  text-align: center;
+}
+
 h2 {
   margin-top: 0;
   font-family: Rick_and_Morty;
@@ -109,6 +123,10 @@ h3 {
      1px 1px 0 #000;
 }
 
+
+.hidden {
+  visibility: hidden;
+}
 /*.portal {
   position: relative;
   right: 240px;
