@@ -1,5 +1,7 @@
 import Game from './Game.js';
 import Categories from './Categories.js';
+import Question from './Question.js';
+
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file
 
