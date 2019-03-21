@@ -1,4 +1,5 @@
 import Game from './Game.js';
+import Categories from './Categories.js';
 import Question from './Question.js';
 
 // This is the JavaScript entry file - your code begins here
@@ -14,8 +15,10 @@ import './css/base.css';
 import domUpdates from './domUpdates.js';
 
 let game = new Game();
+let categories = new Categories();
 
 $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
+  categories.grabCategories();
 });
