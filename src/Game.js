@@ -1,6 +1,6 @@
 import domUpdates from './domUpdates.js';
-import Data from './data.js';
-import Question from './Question.js'
+import data from './data.js';
+import Question from './Question.js';
 
 class Game {
   constructor() {
@@ -15,7 +15,7 @@ class Game {
   }
 
   createQuestions() {
-    Object.values(Data.clues).forEach(clue => {
+    Object.values(data.clues).forEach(clue => {
       this.allQuestions.push(new Question(clue.question, clue.pointValue, clue.answer, clue.potentialAnswers, clue.categoryId));
     });
     console.log(this.allQuestions);
