@@ -20,5 +20,5 @@ let categories = new Categories();
 $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
-  categories.grabCategories();
+  domUpdates.displayCategories();
 });
