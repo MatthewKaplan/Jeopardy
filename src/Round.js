@@ -1,4 +1,5 @@
 import Game from './Game.js';
+import domUpdates from './domUpdates.js';
 
 class Round {
   constructor() {
@@ -18,6 +19,9 @@ class Round {
     this.roundOne = this.createRounds(roundOneArr);
     this.roundTwo = this.createRounds(roundTwoArr);
     this.finalRound = this.createRounds(finalRoundArr);
+
+    // console.log(this.roundOne);
+    domUpdates.displayCategories(this);
   }
 
   createRounds(round) {

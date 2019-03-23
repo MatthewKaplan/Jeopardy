@@ -1,8 +1,10 @@
 import $ from 'jquery';
 import Categories from './Categories.js';
 import Game from './Game.js';
+import Round from './Round.js';
 
 let categories = new Categories();
+let round = new Round();
 
 export default {
 
@@ -20,13 +22,13 @@ export default {
     return $players;
   },
   
-  displayCategories() {
+  displayCategories(round) {
     categories.grabCategories();
     const topics = categories.categoriesArr;
-    $(`.cat-${0}`).text(topics[0]);
-    $(`.cat-${1}`).text(topics[1]);
-    $(`.cat-${2}`).text(topics[2]);
-    $(`.cat-${3}`).text(topics[3]);
-    console.log(topics);
+    round.roundOne.forEach((cat, ind) => {
+      let catId = cat[0].categoryId - 1;
+      console.log(cat);
+      $(`.cat-${ind}`).text(topics[catId])
+    });
   },
 }
