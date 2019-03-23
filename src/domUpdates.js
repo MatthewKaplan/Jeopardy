@@ -27,7 +27,6 @@ export default {
     const topics = categories.categoriesArr;
     round.roundOne.forEach((cat, ind) => {
       let catId = cat[0].categoryId - 1;
-      console.log(cat);
       $(`.cat-${ind}`).text(topics[catId])
     });
   },

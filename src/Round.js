@@ -16,27 +16,26 @@ class Round {
     let roundTwoArr = dataArr.splice(0, 4);
     let finalRoundArr = dataArr.splice(0, 1);
 
-    this.roundOne = this.createRounds(roundOneArr);
-    this.roundTwo = this.createRounds(roundTwoArr);
-    this.finalRound = this.createRounds(finalRoundArr);
+    this.roundOne = this.createRounds(roundOneArr, 1, 5, 100);
+    this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100);
+    this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400);
 
-    // console.log(this.roundOne);
+    console.log(this);
     domUpdates.displayCategories(this);
   }
 
-  createRounds(round) {
+  createRounds(round, startNum, endNum, value) {
     const roundArr = round.reduce((acc, arr) => {
       let subArr = []
-      for(let i = 1; i < 5; i++) {
+      for(let i = startNum; i < endNum; i++) {
         let found = arr.find(el => {
-          return el.pointValue === 100 * i;
+          return el.pointValue === value * i;
         })
         subArr.push(found);
       }
       acc.push(subArr)
       return acc
     }, []);
-
     return roundArr;
   }
 }
