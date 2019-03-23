@@ -5,20 +5,40 @@ class Round {
     this.roundOne = [];
     this.roundTwo = [];
     this.finalRound = [];
+    this.stage = 1;
   }
 
   sortRounds(dataArr) {
     const roundArr = dataArr
 
-    this.roundOne.categoryIds = roundArr.splice(0, 4);
-    this.roundTwo.categoryIds = roundArr.splice(0, 4);
-    this.finalRound.categoryIds = roundArr.splice(0, 1);
+    let roundOneArr = dataArr.splice(0, 4);
+    let roundTwoArr = dataArr.splice(0, 4);
+    let finalRoundArr = dataArr.splice(0, 1);
 
-    console.log(this.roundOne);
-    console.log(this.roundTwo);
-    console.log(this.finalRound);
-    console.log(this.allData);
+    this.roundOne = this.createRounds(roundOneArr);
+    this.roundTwo = this.createRounds(roundTwoArr);
+    this.finalRound = this.createRounds(finalRoundArr);
+  }
+
+  createRounds(round) {
+    const roundArr = round.reduce((acc, arr) => {
+      let subArr = []
+      for(let i = 1; i < 5; i++) {
+        let found = arr.find(el => {
+          return el.pointValue === 100 * i;
+        })
+        subArr.push(found);
+      }
+      acc.push(subArr)
+      return acc
+    }, []);
+
+    return roundArr;
   }
 }
+
+
+
+
 
 export default Round;

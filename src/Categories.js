@@ -12,6 +12,9 @@ class Categories {
     });    
     this.categoriesArr = seperatedCategories;
   }
+
+
+  
 }
 
 export default Categories;
