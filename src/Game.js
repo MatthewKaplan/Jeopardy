@@ -1,21 +1,23 @@
 import domUpdates from './domUpdates.js';
 import data from './data.js';
 import Question from './Question.js';
+import Round from './Round.js'
+
+
+let round = new Round();
 
 class Game {
   constructor() {
     this.players = [];
     this.allData = [[], [], [], [], [], [], [], [], [], []];
-    this.roundOne = [];
-    this.roundTwo = [];
-    this.finalRound = [];
   }
+
   startGame() {
     domUpdates.hideStartScreen();
     let names = domUpdates.grabNames();
     this.players.push(names);
     this.getRandomData();
-    this.sortRounds();
+    round.sortRounds(this.allData);
   }
 
 
@@ -35,20 +37,7 @@ class Game {
     return a.sort(() => 0.5 - Math.random());
   }
 
-  sortRounds() {
-    const roundArr = this.allData
-
-    this.roundOne.categoryIds = roundArr.splice(0, 4);
-    this.roundTwo.categoryIds = roundArr.splice(0, 4);
-    this.finalRound.categoryIds = roundArr.splice(0, 1);
-
-    console.log(this.roundOne);
-    console.log(this.roundTwo);
-    console.log(this.finalRound);
-    console.log(this.allData);
-  }
-
-
+  
 }
 
 
