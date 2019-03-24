@@ -16,10 +16,18 @@ import './css/base.css';
 import domUpdates from './domUpdates.js';
 
 let game = new Game();
-let categories = new Categories();
 
 $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
-  domUpdates.displayCategories();
+  console.log(game);
+  domUpdates.displayCategories(game);
 });
+
+$('.questions-container').on('click', '.box', () => {
+  let boxId = event.target.parentElement.id;
+  console.log(boxId);
+  console.log(game);
+  game.round.gameBoardTargeter(boxId, game);
+});
+

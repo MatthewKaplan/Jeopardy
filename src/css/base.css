@@ -128,6 +128,10 @@ h3 {
   display: none;
 }
 
+.question-used {
+  visibility: hidden;
+}
+
 .question-display {
   border: 2px solid red;
   width: 80%;

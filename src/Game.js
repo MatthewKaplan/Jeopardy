@@ -1,15 +1,17 @@
 import domUpdates from './domUpdates.js';
 import data from './data.js';
 import Question from './Question.js';
-import Round from './Round.js'
+import Round from './Round.js';
+import Categories from './Categories.js';
 
 
-let round = new Round();
+
 
 class Game {
   constructor() {
     this.players = [];
     this.allData = [[], [], [], [], [], [], [], [], [], []];
+    this.round = new Round();
   }
 
   startGame() {
@@ -17,7 +19,7 @@ class Game {
     let names = domUpdates.grabNames();
     this.players.push(names);
     this.getRandomData();
-    round.sortRounds(this.allData);
+    this.round.sortRounds(this.allData);
   }
 
 

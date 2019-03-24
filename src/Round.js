@@ -1,5 +1,7 @@
 import Game from './Game.js';
 import domUpdates from './domUpdates.js';
+import Categories from './Categories.js';
+
 
 class Round {
   constructor() {
@@ -7,6 +9,7 @@ class Round {
     this.roundTwo = [];
     this.finalRound = [];
     this.stage = 1;
+    this.categories = new Categories();
   }
 
   sortRounds(dataArr) {
@@ -16,17 +19,17 @@ class Round {
     let roundTwoArr = dataArr.splice(0, 4);
     let finalRoundArr = dataArr.splice(0, 1);
 
-    this.roundOne = this.createRounds(roundOneArr, 1, 5, 100);
-    this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100);
+    this.roundOne = this.createRounds(roundOneArr, 1, 5, 100).flat();
+    this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100).flat();
     this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400);
 
-    console.log(this);
     domUpdates.displayCategories(this);
+    this.gameBoardTargeter(this);
   }
 
   createRounds(round, startNum, endNum, value) {
     const roundArr = round.reduce((acc, arr) => {
-      let subArr = []
+      let subArr = []      
       for(let i = startNum; i < endNum; i++) {
         let found = arr.find(el => {
           return el.pointValue === value * i;
@@ -37,6 +40,10 @@ class Round {
       return acc
     }, []);
     return roundArr;
+  }
+
+  gameBoardTargeter(boxId, game) {
+    domUpdates.gameBoardListener(boxId, game);
   }
 }
 

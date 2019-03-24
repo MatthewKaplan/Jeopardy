@@ -3,9 +3,6 @@ import Categories from './Categories.js';
 import Game from './Game.js';
 import Round from './Round.js';
 
-let categories = new Categories();
-let round = new Round();
-
 export default {
 
   hideStartScreen() {
@@ -22,13 +19,21 @@ export default {
     return $players;
   },
   
-  displayCategories(round) {
-    categories.grabCategories();
+  displayCategories(game) {
+    game.round.categories.grabCategories();
     const topics = categories.categoriesArr;
-    round.roundOne.forEach((cat, i) => {
+    game.round.roundOne.forEach((cat, i) => {
       let catId = cat[0].categoryId - 1;
       $(`.cat-${i}`).text(topics[catId])
     });
+  },
+
+  gameBoardListener(boxId, game) {
+    console.log(game);
+    let boxInfo = game.round.roundOne[boxId];
+    console.log('boxInfo', boxInfo)
+    let boxValue = boxInfo.pointValue;
+    console.log('boxValue', boxValue)
   },
 
 }

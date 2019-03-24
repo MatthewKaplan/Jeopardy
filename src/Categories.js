@@ -1,3 +1,4 @@
+import Game from './Game.js';
 import data from './data.js';
 import domUpdates from './domUpdates.js';
 
@@ -11,10 +12,7 @@ class Categories {
     return topic.replace( rex, '$1$4 $2$3$5' ).toUpperCase();
     });    
     this.categoriesArr = seperatedCategories;
-  }
-
-
-  
+  }  
 }
 
 export default Categories;
