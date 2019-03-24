@@ -20,14 +20,14 @@ let game = new Game();
 $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
-  console.log(game);
   domUpdates.displayCategories(game);
+  // console.log(game);
 });
 
 $('.questions-container').on('click', '.box', () => {
   let boxId = event.target.parentElement.id;
-  console.log(boxId);
-  console.log(game);
+  // console.log(boxId);
+  // console.log(game);
   game.round.gameBoardTargeter(boxId, game);
   domUpdates.showQuestion();
 });

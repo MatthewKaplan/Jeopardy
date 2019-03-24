@@ -1,5 +1,6 @@
 import Game from './Game.js';
 import data from './data.js';
+import Round from './Round.js';
 import domUpdates from './domUpdates.js';
 
 class Categories {
