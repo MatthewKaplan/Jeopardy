@@ -21,19 +21,20 @@ export default {
   
   displayCategories(game) {
     game.round.categories.grabCategories();
-    const topics = categories.categoriesArr;
+    const topics = game.round.categories.categoriesArr;
     game.round.roundOne.forEach((cat, i) => {
-      let catId = cat[0].categoryId - 1;
+      let catId = cat.categoryId - 1;
+      console.log(topics[catId]);
+      console.log(i);
       $(`.cat-${i}`).text(topics[catId])
     });
   },
 
   gameBoardListener(boxId, game) {
-    console.log(game);
     let boxInfo = game.round.roundOne[boxId];
-    console.log('boxInfo', boxInfo)
+    // console.log('boxInfo', boxInfo)
     let boxValue = boxInfo.pointValue;
-    console.log('boxValue', boxValue)
+    // console.log('boxValue', boxValue)
   },
 
 }

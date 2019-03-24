@@ -23,8 +23,7 @@ class Round {
     this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100).flat();
     this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400);
 
-    domUpdates.displayCategories(this);
-    this.gameBoardTargeter(this);
+    // domUpdates.displayCategories(this);
   }
 
   createRounds(round, startNum, endNum, value) {
