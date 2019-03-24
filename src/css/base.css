@@ -125,13 +125,19 @@ h3 {
 
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .question-display {
   border: 2px solid red;
   width: 80%;
   margin: auto;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ans-btn {

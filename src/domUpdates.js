@@ -25,9 +25,13 @@ export default {
   displayCategories(round) {
     categories.grabCategories();
     const topics = categories.categoriesArr;
-    round.roundOne.forEach((cat, ind) => {
+    round.roundOne.forEach((cat, i) => {
       let catId = cat[0].categoryId - 1;
-      $(`.cat-${ind}`).text(topics[catId])
+      $(`.cat-${i}`).text(topics[catId])
     });
   },
+
 }
+
+
+
