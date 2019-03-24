@@ -30,7 +30,7 @@ class Game {
       })
     });
     this.shuffle(this.allData).forEach(cat => this.shuffle(cat));
-    console.log('on start:',this.allData);
+    // console.log('on start:',this.allData);
   }
 
   shuffle(a) {

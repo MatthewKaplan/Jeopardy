@@ -125,11 +125,30 @@ h3 {
 
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
-/*.portal {
-  position: relative;
-  right: 240px;
-  opacity: 0.33;
-  top: 300px; 
-}*/
+
+.question-display {
+  border: 2px solid red;
+  width: 80%;
+  margin: auto;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ans-btn {
+  height: 80px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+.potential-answers {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+}
