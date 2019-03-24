@@ -29,5 +29,6 @@ $('.questions-container').on('click', '.box', () => {
   console.log(boxId);
   console.log(game);
   game.round.gameBoardTargeter(boxId, game);
+  domUpdates.showQuestion();
 });
 
