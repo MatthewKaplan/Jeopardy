@@ -10,6 +10,8 @@ export default {
     $('.start-page').hide();
     $('header').removeClass('hidden');
     $('section').removeClass('hidden');
+    $('.correctAns').addClass('hidden');
+    $('.wrongAns').addClass('hidden');
   },
 
   grabNames() {
@@ -48,15 +50,13 @@ export default {
     $('.game').addClass('hidden');
     $('.question-display').removeClass('hidden');
     var currentQuestion = ` 
-        <section class="question">
           <h1 class="question-title">${boxInfo.question}</h1>
             <div class="potential-answers">
               <button class="ans-btn" id="answer1">${boxInfo.potentialAnswers[0]}</button>
               <button class="ans-btn" id="answer2">${boxInfo.potentialAnswers[1]}</button>
               <button class="ans-btn" id="answer3">${boxInfo.potentialAnswers[2]}</button>
               <button class="ans-btn" id="answer4">${boxInfo.potentialAnswers[3]}</button>
-            </div>
-        </section>`;
+            </div>`;
         $(".question-display").html(currentQuestion);
         // this.checkAnswer(boxInfo);
   },
@@ -69,10 +69,14 @@ export default {
     if(ansText === answer){
       console.log('thats correct!')
       playerScore += boxInfo.pointValue;
+      $('.question-display').addClass('hidden');
+      $('.correctAns').removeClass('hidden');
       console.log(playerScore);
     } else {
       console.log('thats WRONG!')
       playerScore -= boxInfo.pointValue;
+      $('.question-display').addClass('hidden');
+      $('.wrongAns').removeClass('hidden');
       console.log(playerScore);
       game.updatePlayerTurn();
     }
@@ -81,7 +85,7 @@ export default {
   playerTurn(playerIndex) {
     console.log(playerIndex);
     $(`#${playerIndex}`).addClass('player-turn');
-  }
+  },
 }
 
 
