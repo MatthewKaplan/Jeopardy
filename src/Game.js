@@ -13,6 +13,7 @@ class Game {
     this.players = [];
     this.allData = [[], [], [], [], [], [], [], [], [], []];
     this.round = new Round();
+    this.player = new Player();
     this.currentPlayer = -1;
   }
 

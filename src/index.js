@@ -21,14 +21,25 @@ $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
   domUpdates.displayCategories(game);
-  // console.log(game);
 });
 
 $('.questions-container').on('click', '.box', () => {
   let boxId = event.target.parentElement.id;
-  // console.log(boxId);
-  // console.log(game);
   game.round.gameBoardTargeter(boxId, game);
-  domUpdates.showQuestion();
 });
+
+$('.question-display').on('click', '.ans-btn', () => {
+  let ans = event.target;
+  console.log(ans);
+  domUpdates.checkAnswer(game.round.currentQuestion, ans, game);
+});
+
+
+
+
+
+
+
+
+
 
