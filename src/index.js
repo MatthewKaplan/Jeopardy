@@ -26,12 +26,10 @@ $('.play-game-btn').on('click', function(e){
 $('.questions-container').on('click', '.box', () => {
   let boxId = event.target.parentElement.id;
   game.round.gameBoardTargeter(boxId, game);
-  // domUpdates.showQuestion();
 });
 
-$('.potential-answers').on('click', '.ans-btn', () => {
-  let ansId = event.target.id;
-  console.log(ansId);
+$('.question-display').on('click', '.ans-btn', () => {
+  domUpdates.checkAnswer(game.round.currentQuestion);
 });
 
 

@@ -20,7 +20,6 @@ export default {
   },
   
   displayCategories(game) {
-    console.log(game);
     game.round.categories.grabCategories();
     const topics = game.round.categories.categoriesArr;
     const topicsArr = [];
@@ -36,6 +35,7 @@ export default {
 
   gameBoardListener(boxId, game) {
     let boxInfo = game.round.roundOne[boxId];
+    game.round.currentQuestion = boxInfo;
     // console.log('boxInfo', boxInfo)
     let boxValue = boxInfo.pointValue;
     // console.log('boxValue', boxValue)
@@ -46,7 +46,6 @@ export default {
     $('.player-section').addClass('hidden');
     $('.game').addClass('hidden');
     $('.question-display').removeClass('hidden');
-    console.log(boxInfo);
     var currentQuestion = ` 
         <section class="question">
           <h1 class="question-title">${boxInfo.question}</h1>
@@ -61,7 +60,8 @@ export default {
         // this.checkAnswer(boxInfo);
   },
 
-  checkAnswer(boxInfo, event) {
+  checkAnswer(boxInfo) {
+    console.log(boxInfo);
     // console.log(boxInfo);
     // // console.log(event.target)
     // // if()
