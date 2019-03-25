@@ -36,18 +36,19 @@ export default {
 
   gameBoardListener(boxId, game) {
     let boxInfo = game.round.roundOne[boxId];
-    console.log('boxInfo', boxInfo)
+    // console.log('boxInfo', boxInfo)
     let boxValue = boxInfo.pointValue;
     // console.log('boxValue', boxValue)
-    this.showQuestion(boxInfo, game);
+    this.showQuestion(boxInfo);
   },
-
 
   showQuestion(boxInfo) {
     $('.player-section').addClass('hidden');
     $('.game').addClass('hidden');
     $('.question-display').removeClass('hidden');
-    var currentQuestion = ` <section class="question">
+    console.log(boxInfo);
+    var currentQuestion = ` 
+        <section class="question">
           <h1 class="question-title">${boxInfo.question}</h1>
             <div class="potential-answers">
               <button class="answer1 ans-btn">${boxInfo.potentialAnswers[0]}</button>
@@ -57,7 +58,16 @@ export default {
             </div>
         </section>`;
         $(".question-display").html(currentQuestion);
+        // this.checkAnswer(boxInfo);
   },
+
+  checkAnswer(boxInfo, event) {
+    // console.log(boxInfo);
+    // // console.log(event.target)
+    // // if()
+    // console.log(event.currentTarget);
+
+  }
 }
 
 
