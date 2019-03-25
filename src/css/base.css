@@ -156,3 +156,7 @@ h3 {
   align-content: center;
   flex-wrap: wrap;
 }
+
+.player-turn {
+  background-color: yellow;
+}

@@ -74,7 +74,13 @@ export default {
       console.log('thats WRONG!')
       playerScore -= boxInfo.pointValue;
       console.log(playerScore);
+      game.updatePlayerTurn();
     }
+  },
+
+  playerTurn(playerIndex) {
+    console.log(playerIndex);
+    $(`#${playerIndex}`).addClass('player-turn');
   }
 }
 

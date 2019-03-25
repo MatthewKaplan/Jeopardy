@@ -14,7 +14,7 @@ class Game {
     this.allData = [[], [], [], [], [], [], [], [], [], []];
     this.round = new Round();
     this.player = new Player();
-    this.currentPlayer = -1;
+    this.currentPlayer = 29;
   }
 
   startGame() {
@@ -24,6 +24,7 @@ class Game {
     // this.players.push(names);
     this.getRandomData();
     this.round.sortRounds(this.allData);
+    this.updatePlayerTurn();
   }
 
 
@@ -50,6 +51,15 @@ class Game {
     this.players.push(player2);
     this.players.push(player3);
     console.log('gamePlayers', this.players);
+  }
+
+  updatePlayerTurn() {
+    if (this.currentPlayer > 31) {
+      this.currentPlayer = 30
+    } else {
+      this.currentPlayer++;
+    }
+    domUpdates.playerTurn(this.currentPlayer);
   }
 
   
