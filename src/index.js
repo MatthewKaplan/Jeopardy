@@ -29,7 +29,9 @@ $('.questions-container').on('click', '.box', () => {
 });
 
 $('.question-display').on('click', '.ans-btn', () => {
-  domUpdates.checkAnswer(game.round.currentQuestion);
+  let ans = event.target;
+  console.log(ans);
+  domUpdates.checkAnswer(game.round.currentQuestion, ans);
 });
 
 

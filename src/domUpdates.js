@@ -50,23 +50,27 @@ export default {
         <section class="question">
           <h1 class="question-title">${boxInfo.question}</h1>
             <div class="potential-answers">
-              <button class="answer1 ans-btn">${boxInfo.potentialAnswers[0]}</button>
-              <button class="answer2 ans-btn">${boxInfo.potentialAnswers[1]}</button>
-              <button class="answer3 ans-btn">${boxInfo.potentialAnswers[2]}</button>
-              <button class="answer4 ans-btn">${boxInfo.potentialAnswers[3]}</button>
+              <button class="ans-btn" id="answer1">${boxInfo.potentialAnswers[0]}</button>
+              <button class="ans-btn" id="answer2">${boxInfo.potentialAnswers[1]}</button>
+              <button class="ans-btn" id="answer3">${boxInfo.potentialAnswers[2]}</button>
+              <button class="ans-btn" id="answer4">${boxInfo.potentialAnswers[3]}</button>
             </div>
         </section>`;
         $(".question-display").html(currentQuestion);
         // this.checkAnswer(boxInfo);
   },
 
-  checkAnswer(boxInfo) {
-    console.log(boxInfo);
-    // console.log(boxInfo);
-    // // console.log(event.target)
-    // // if()
-    // console.log(event.currentTarget);
+  checkAnswer(boxInfo, ans) {
+    let ansText = ans.innerText.valueOf();
+    let answer = boxInfo.answer.valueOf();
 
+    console.log(ansText === answer);
+
+    if(ansText === answer){
+      console.log('thats correct!')
+    } else {
+      console.log('thats WRONG!')
+    }
   }
 }
 
