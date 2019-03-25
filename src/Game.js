@@ -14,7 +14,7 @@ class Game {
     this.allData = [[], [], [], [], [], [], [], [], [], []];
     this.round = new Round();
     this.player = new Player();
-    this.currentPlayer = 29;
+    this.currPlayer = 100;
   }
 
   startGame() {
@@ -23,7 +23,7 @@ class Game {
     this.createPlayers(names);
     this.getRandomData();
     this.round.sortRounds(this.allData);
-    this.updatePlayerTurn();
+    // this.updatePlayerTurn();
   }
 
 
@@ -49,17 +49,25 @@ class Game {
     this.players.push(player1);
     this.players.push(player2);
     this.players.push(player3);
-    console.log('gamePlayers', this.players);
+    // console.log('gamePlayers', this.players);
   }
 
+
   updatePlayerTurn() {
-    if (this.currentPlayer > 31) {
-      this.currentPlayer = 30
+    if(this.currPlayer > 101) {
+      this.currPlayer = 100;
     } else {
-      this.currentPlayer++;
+      this.currPlayer++;
     }
-    domUpdates.playerTurn(this.currentPlayer);
-  }  
+
+
+    let currentPlayer = this.players.shift();
+    this.players.push(currentPlayer);
+
+    console.log(this.players);
+
+    domUpdates.playerTurn(this.currPlayer);
+  } 
 }
 
 
