@@ -26,6 +26,7 @@ $('.play-game-btn').on('click', function(e){
 $('.questions-container').on('click', '.box', () => {
   let boxId = event.target.parentElement.id;
   game.round.gameBoardTargeter(boxId, game);
+  event.target.classList.add('hidden');
 });
 
 $('.question-display').on('click', '.ans-btn', () => {
@@ -34,7 +35,17 @@ $('.question-display').on('click', '.ans-btn', () => {
   domUpdates.checkAnswer(game.round.currentQuestion, ans, game);
 });
 
+$('.correctAns').on('click', '.next-question', () => {
+  $('.correctAns').addClass('hidden');
+  $('.game').removeClass('hidden');
+  $('.player-section').removeClass('hidden');
+});
 
+$('.wrongAns').on('click', '.next-turn', () => {
+  $('.wrongAns').addClass('hidden');
+  $('.game').removeClass('hidden');
+  $('.player-section').removeClass('hidden');
+});
 
 
 
