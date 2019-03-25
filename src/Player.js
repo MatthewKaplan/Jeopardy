@@ -9,13 +9,14 @@ class Player {
 
   wrong(boxInfo){
     this.score -= boxInfo.pointValue;
-    console.log(this.score);
-    console.log(this)
+    // console.log(this.score);
+    console.log(this);
   }
 
   correct(boxInfo){
     this.score += boxInfo.pointValue;
-    console.log(this.score);
+    // console.log(this.score);
+    console.log(this);
   }
 }
 

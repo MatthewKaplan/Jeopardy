@@ -76,13 +76,11 @@ export default {
     }
   },
 
-  playerTurn(playerIndex) {
-    $(`#${playerIndex}`).addClass('player-turn');
+  playerTurn(currPlayer) {
+    $('.player').removeClass('player-turn');
+    console.log(currPlayer);
+    $(`#${currPlayer}`).addClass('player-turn');
   },
-
-  // updateScore() {
-
-  // }
 }
 
 
