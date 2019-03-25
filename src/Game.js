@@ -21,7 +21,6 @@ class Game {
     domUpdates.hideStartScreen();
     let names = domUpdates.grabNames();
     this.createPlayers(names);
-    // this.players.push(names);
     this.getRandomData();
     this.round.sortRounds(this.allData);
     this.updatePlayerTurn();
@@ -44,9 +43,9 @@ class Game {
   }
 
   createPlayers(names) {
-    let player1 = new Player(names[0]);
-    let player2 = new Player(names[1]);
-    let player3 = new Player(names[2]);
+    let player1 = new Player(names[0], 0);
+    let player2 = new Player(names[1], 0);
+    let player3 = new Player(names[2], 0);
     this.players.push(player1);
     this.players.push(player2);
     this.players.push(player3);
@@ -60,9 +59,7 @@ class Game {
       this.currentPlayer++;
     }
     domUpdates.playerTurn(this.currentPlayer);
-  }
-
-  
+  }  
 }
 
 

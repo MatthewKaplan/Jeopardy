@@ -58,34 +58,31 @@ export default {
               <button class="ans-btn" id="answer4">${boxInfo.potentialAnswers[3]}</button>
             </div>`;
         $(".question-display").html(currentQuestion);
-        // this.checkAnswer(boxInfo);
   },
 
   checkAnswer(boxInfo, ans, game) {
     let ansText = ans.innerText.valueOf();
     let answer = boxInfo.answer.valueOf();
-    let playerScore = game.player.score;
 
     if(ansText === answer){
-      console.log('thats correct!')
-      playerScore += boxInfo.pointValue;
+      game.players[0].correct(boxInfo);
       $('.question-display').addClass('hidden');
       $('.correctAns').removeClass('hidden');
-      console.log(playerScore);
     } else {
-      console.log('thats WRONG!')
-      playerScore -= boxInfo.pointValue;
+      game.players[0].wrong(boxInfo);
       $('.question-display').addClass('hidden');
       $('.wrongAns').removeClass('hidden');
-      console.log(playerScore);
       game.updatePlayerTurn();
     }
   },
 
   playerTurn(playerIndex) {
-    console.log(playerIndex);
     $(`#${playerIndex}`).addClass('player-turn');
   },
+
+  // updateScore() {
+
+  // }
 }
 
 
