@@ -38,35 +38,26 @@ export default {
     let boxInfo = game.round.roundOne[boxId];
     console.log('boxInfo', boxInfo)
     let boxValue = boxInfo.pointValue;
-    console.log('boxValue', boxValue)
+    // console.log('boxValue', boxValue)
+    this.showQuestion(boxInfo, game);
   },
 
 
-  showQuestion: function(boxId, game) {
-    $('.question-display').prepend(`
-      <section class="answer-container">
-        <div class="answer-question">
-          <h2>${game.round.roundOne.question}</h2>
-          <section class="select-answer">
-            <button class="ans-btn">${game.round.roundOne[0].answer}</button>
-            <button class="ans-btn">${game.round.roundOne[1].answer}</button>
-            <button class="ans-btn">${game.round.roundOne[2].answer}</button>
-            <button class="ans-btn">${game.round.roundOne[3].answer}</button>
-          </section>
-        </div>
-      </section>
-    `);
+  showQuestion(boxInfo) {
+    $('.player-section').addClass('hidden');
+    $('.game').addClass('hidden');
+    $('.question-display').removeClass('hidden');
+    var currentQuestion = ` <section class="question">
+          <h1 class="question-title">${boxInfo.question}</h1>
+            <div class="potential-answers">
+              <button class="answer1 ans-btn">${boxInfo.potentialAnswers[0]}</button>
+              <button class="answer2 ans-btn">${boxInfo.potentialAnswers[1]}</button>
+              <button class="answer3 ans-btn">${boxInfo.potentialAnswers[2]}</button>
+              <button class="answer4 ans-btn">${boxInfo.potentialAnswers[3]}</button>
+            </div>
+        </section>`;
+        $(".question-display").html(currentQuestion);
   },
-  // <section class="question-display hidden">
-  //   <h1 class="question-title">Question</h1>
-  //     <div class="potential-answers">
-  //       <button class="answer1 ans-btn">Answer 1</button>
-  //       <button class="answer2 ans-btn">Answer 2</button>
-  //       <button class="answer3 ans-btn">Answer 3</button>
-  //       <button class="answer4 ans-btn">Answer 4</button>
-  //     </div>
-  // </section>
-
 }
 
 
