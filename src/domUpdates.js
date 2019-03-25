@@ -22,19 +22,22 @@ export default {
   displayCategories(game) {
     game.round.categories.grabCategories();
     const topics = game.round.categories.categoriesArr;
+    const topicsArr = [];
     game.round.roundOne.forEach((cat, i) => {
       let catId = cat.categoryId - 1;
-      console.log(topics[catId]);
-      console.log(i);
-      $(`.cat-${i}`).text(topics[catId])
+      topicsArr.push(topics[catId]);
     });
+    let uniqueTopics = [...new Set(topicsArr)];
+    uniqueTopics.forEach((cat,i) => {
+      $(`.cat-${i}`).text(cat);
+    })
   },
 
   gameBoardListener(boxId, game) {
     let boxInfo = game.round.roundOne[boxId];
-    // console.log('boxInfo', boxInfo)
+    console.log('boxInfo', boxInfo)
     let boxValue = boxInfo.pointValue;
-    // console.log('boxValue', boxValue)
+    console.log('boxValue', boxValue)
   },
 
 }
