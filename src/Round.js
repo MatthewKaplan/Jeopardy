@@ -8,6 +8,7 @@ class Round {
     this.roundOne = [];
     this.roundTwo = [];
     this.finalRound = [];
+    
     this.stage = 1;
     this.categories = new Categories();
   }

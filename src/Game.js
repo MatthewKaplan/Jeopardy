@@ -3,6 +3,7 @@ import data from './data.js';
 import Question from './Question.js';
 import Round from './Round.js';
 import Categories from './Categories.js';
+import Player from './Player.js';
 
 
 
@@ -12,12 +13,14 @@ class Game {
     this.players = [];
     this.allData = [[], [], [], [], [], [], [], [], [], []];
     this.round = new Round();
+    this.currentPlayer = -1;
   }
 
   startGame() {
     domUpdates.hideStartScreen();
     let names = domUpdates.grabNames();
-    this.players.push(names);
+    this.createPlayers(names);
+    // this.players.push(names);
     this.getRandomData();
     this.round.sortRounds(this.allData);
   }
@@ -36,6 +39,16 @@ class Game {
 
   shuffle(a) {
     return a.sort(() => 0.5 - Math.random());
+  }
+
+  createPlayers(names) {
+    let player1 = new Player(names[0]);
+    let player2 = new Player(names[1]);
+    let player3 = new Player(names[2]);
+    this.players.push(player1);
+    this.players.push(player2);
+    this.players.push(player3);
+    console.log('gamePlayers', this.players);
   }
 
   

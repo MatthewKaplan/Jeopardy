@@ -20,6 +20,7 @@ export default {
   },
   
   displayCategories(game) {
+    console.log(game);
     game.round.categories.grabCategories();
     const topics = game.round.categories.categoriesArr;
     const topicsArr = [];
@@ -39,6 +40,32 @@ export default {
     let boxValue = boxInfo.pointValue;
     console.log('boxValue', boxValue)
   },
+
+
+  showQuestion: function(boxId, game) {
+    $('.question-display').prepend(`
+      <section class="answer-container">
+        <div class="answer-question">
+          <h2>${game.round.roundOne.question}</h2>
+          <section class="select-answer">
+            <button class="ans-btn">${game.round.roundOne[0].answer}</button>
+            <button class="ans-btn">${game.round.roundOne[1].answer}</button>
+            <button class="ans-btn">${game.round.roundOne[2].answer}</button>
+            <button class="ans-btn">${game.round.roundOne[3].answer}</button>
+          </section>
+        </div>
+      </section>
+    `);
+  },
+  // <section class="question-display hidden">
+  //   <h1 class="question-title">Question</h1>
+  //     <div class="potential-answers">
+  //       <button class="answer1 ans-btn">Answer 1</button>
+  //       <button class="answer2 ans-btn">Answer 2</button>
+  //       <button class="answer3 ans-btn">Answer 3</button>
+  //       <button class="answer4 ans-btn">Answer 4</button>
+  //     </div>
+  // </section>
 
 }
 
