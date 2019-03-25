@@ -66,8 +66,6 @@ export default {
     let answer = boxInfo.answer.valueOf();
     let playerScore = game.player.score;
 
-    console.log(ansText === answer);
-
     if(ansText === answer){
       console.log('thats correct!')
       playerScore += boxInfo.pointValue;
