@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Categories from './Categories.js';
 import Game from './Game.js';
 import Round from './Round.js';
+import Player from './Player.js';
 
 export default {
 
@@ -60,16 +61,21 @@ export default {
         // this.checkAnswer(boxInfo);
   },
 
-  checkAnswer(boxInfo, ans) {
+  checkAnswer(boxInfo, ans, game) {
     let ansText = ans.innerText.valueOf();
     let answer = boxInfo.answer.valueOf();
+    let playerScore = game.player.score;
 
     console.log(ansText === answer);
 
     if(ansText === answer){
       console.log('thats correct!')
+      playerScore += boxInfo.pointValue;
+      console.log(playerScore);
     } else {
       console.log('thats WRONG!')
+      playerScore -= boxInfo.pointValue;
+      console.log(playerScore);
     }
   }
 }
