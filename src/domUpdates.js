@@ -22,11 +22,11 @@ export default {
     return $players;
   },
   
-  displayCategories(game) {
+  displayCategories(game, currRound) {
     game.round.categories.grabCategories();
     const topics = game.round.categories.categoriesArr;
     const topicsArr = [];
-    game.round.roundOne.forEach((cat, i) => {
+    currRound.forEach((cat, i) => {
       let catId = cat.categoryId - 1;
       topicsArr.push(topics[catId]);
     });
@@ -36,8 +36,9 @@ export default {
     })
   },
 
-  gameBoardListener(boxId, game) {
-    let boxInfo = game.round.roundOne[boxId];
+  gameBoardListener(boxId, game, currRound) {
+    console.log(boxId);
+    let boxInfo = currRound[boxId];
     game.round.currentQuestion = boxInfo;
     let boxValue = boxInfo.pointValue;
     this.showQuestion(boxInfo);
