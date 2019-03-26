@@ -32,7 +32,6 @@ $('.questions-container').on('click', '.box', () => {
 
 $('.question-display').on('click', '.ans-btn', () => {
   let ans = event.target;
-  console.log(ans);
   domUpdates.checkAnswer(game.round.currentQuestion, ans, game);
 });
 
@@ -40,12 +39,14 @@ $('.correctAns').on('click', '.next-question', () => {
   $('.correctAns').addClass('hidden');
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
+  domUpdates.updateScores(game);
 });
 
 $('.wrongAns').on('click', '.next-turn', () => {
   $('.wrongAns').addClass('hidden');
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
+  domUpdates.updateScores(game);
 });
 
 

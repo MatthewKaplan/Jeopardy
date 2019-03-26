@@ -15,16 +15,12 @@ class Round {
 
   sortRounds(dataArr) {
     const roundArr = dataArr
-
     let roundOneArr = dataArr.splice(0, 4);
     let roundTwoArr = dataArr.splice(0, 4);
     let finalRoundArr = dataArr.splice(0, 1);
-
     this.roundOne = this.createRounds(roundOneArr, 1, 5, 100).flat();
     this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100).flat();
     this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400);
-
-    // domUpdates.displayCategories(this);
   }
 
   createRounds(round, startNum, endNum, value) {
