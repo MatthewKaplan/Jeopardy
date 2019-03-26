@@ -10,6 +10,9 @@ class Round {
     this.finalRound = [];
     this.currentQuestion = {};
     this.stage = 1;
+    // this.dDouble = undefined; 
+    // this.wager = undefined;
+    // this.ddCount = 0;
     this.categories = new Categories();
   }
 
@@ -41,6 +44,7 @@ class Round {
   gameBoardTargeter(boxId, game) {
     domUpdates.gameBoardListener(boxId, game);
   }
+
 }
 
 

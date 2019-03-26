@@ -2,43 +2,105 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   margin: auto;
 }
 
-.header-bar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-}
+/*Start Page*/
 
+.start-page {
+  height: 100vh;
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+}
 h1 {
-  font-family: "Get Schwifty";
-  -webkit-text-stroke: .5px #97ce4c;
-   color: #35c9dd;
-   text-shadow:
-       3px 3px 0 #000,
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;
+  margin-top: 0px;
+  /*-webkit-text-stroke: #FFEEB7;*/
+  color: #FFEEB7;
+  text-shadow: 1px 1px 2px #fff;
   font-size: 70px;
   text-align: center;
 }
 
 h2 {
   margin-top: 0;
-  font-family: Rick_and_Morty;
+  color: #FFEEB7;
+  text-shadow: .5px .5px 1px #fff;
+  font-size: 30px;
+  text-align: center;
 }
 
-h3 {
-  font-family: "Helvetica Neue";
+label {
+  margin-top: 0;
+  color: #FFEEB7;
+  text-shadow: .5px .5px 1px #fff;
+  font-size: 20px;
+
+}
+
+.rick-sanchez {
+  height: 100px;
+  width: 100px;
+}
+
+.play-game-btn:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.play-game-btn {
+  height: 65px;
+  width: 400px;
+  margin-top: 50px;
+  border-radius: 25px;
+  background-color: #FFEEB7;
+  font-size: 50px;
+  color: #42649b;
+  text-shadow: .5px .5px 1px #fff;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Main Page*/
+
+.header-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  height: 80px; 
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+}
+
+.main-title {
+  margin-bottom: 10px;
+  font-size: 35px;
+  color: #FFEEB7;
+}
+
+.reset-btn {
+  height: 40px;
+  width: 250px;
+  margin-top: 20px;
+  border-radius: 25px;
+  background-color: #42649b;
+  font-size: 35px;
+  color: #FFEEB7;
+  text-shadow: .5px .5px 1px #fff;
+}
+
+.reset-btn:hover {
+  background-color: grey;
+  cursor: pointer;
 }
 
 .game{
-  background-color: #1E8BC3;
+  background-image:linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
   display: grid;
   grid-template-areas: "gameboard" "player";
   grid-template-columns: 1fr;
@@ -56,11 +118,18 @@ h3 {
 
 .categories-box{
   background-color: #1C7CAE;
+  font-weight: 800;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+}
+
+.box-title {
+  height: 25px;
+  margin-bottom: 25px;
+  font-size: 45px;
 }
 
 .questions-container {
@@ -73,7 +142,8 @@ h3 {
 
 .box {
   background-color: #1C7CAE;
-  border: 2px solid black;
+  border: none;
+  /*border: 2px solid black;*/
   color: #f0e14a;
   border-radius: 5px;
   font-size: 55px;
@@ -83,8 +153,15 @@ h3 {
 }
 
 .box:hover {
-  -webkit-text-stroke: 1.5px #97ce4c;
-  color: #35c9dd;
+  /*-webkit-text-stroke: 1.25px #f0e14a;*/
+  background-color: #42649b;
+}
+
+.player {
+  background-color: #1C7CAE;
+  height: 200px;
+  width: 200px;
+  border: solid;
 }
 
 .players,
@@ -92,37 +169,13 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 
-.rick-sanchez {
-  height: "50";
-  width: "50";
+.player-section {
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+  padding-bottom: 60px;
 }
-
-.play-game-btn:hover {
-  -webkit-text-stroke: 3px #97ce4c;
-}
-
-.play-game-btn {
-  cursor: pointer;
-  height: 65px;
-  width: 400px;
-  margin-top: 50px;
-  border: none; 
-  font-size: 100px;
-  font-family: "Get Schwifty";
-
-  
-  color: #35c9dd;
-  text-shadow:
-     3px 3px 0 #000,
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
-}
-
 
 .hidden {
   display: none;
@@ -135,21 +188,27 @@ h3 {
 .question-display,
 .correctAns,
 .wrongAns {
-  border: 2px solid red;
-  width: 80%;
+  /*border: 2px solid red;*/
+  /*width: 80%;*/
   margin: auto;
+  height: 100vh;
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
 }
 
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
+.next-turn,
 .ans-btn {
-  height: 80px;
+  /*height: 80px;
   margin-bottom: 20px;
-  width: 300px;
+  width: 300px;*/
+  height: 65px;
+  width: 400px;
+  margin-top: 50px;
+  border-radius: 25px;
+  background-color: #FFEEB7;
+  font-size: 50px;
+  color: #42649b;
+  text-shadow: .5px .5px 1px #fff;
 }
 
 .potential-answers,
@@ -161,5 +220,5 @@ h3 {
 }
 
 .player-turn {
-  background-color: yellow;
+  background-color: #42649b;
 }
