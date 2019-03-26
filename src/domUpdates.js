@@ -39,9 +39,7 @@ export default {
   gameBoardListener(boxId, game) {
     let boxInfo = game.round.roundOne[boxId];
     game.round.currentQuestion = boxInfo;
-    // console.log('boxInfo', boxInfo)
     let boxValue = boxInfo.pointValue;
-    // console.log('boxValue', boxValue)
     this.showQuestion(boxInfo);
   },
 
@@ -65,11 +63,11 @@ export default {
     let answer = boxInfo.answer.valueOf();
 
     if(ansText === answer){
-      game.players[0].correct(boxInfo);
+      game.currentPlayer.correct(boxInfo);
       $('.question-display').addClass('hidden');
       $('.correctAns').removeClass('hidden');
     } else {
-      game.players[0].wrong(boxInfo);
+      game.currentPlayer.wrong(boxInfo, game);
       $('.question-display').addClass('hidden');
       $('.wrongAns').removeClass('hidden');
       game.updatePlayerTurn();
@@ -78,9 +76,17 @@ export default {
 
   playerTurn(currPlayer) {
     $('.player').removeClass('player-turn');
-    console.log(currPlayer);
-    $(`#${currPlayer}`).addClass('player-turn');
+    $(`.player.${currPlayer.playerIndex}`).addClass('player-turn');
   },
+
+  updateScores(game) {
+    game.players.forEach((player, ind) => {
+      $(`#player-${ind}-total`).html(`
+        <h3 class="player-score" id="player-${ind}-total">Score: ${player.score} </h3>
+      `);
+    })
+
+  }
 }
 
 
