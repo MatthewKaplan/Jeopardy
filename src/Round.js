@@ -1,6 +1,7 @@
 import Game from './Game.js';
 import domUpdates from './domUpdates.js';
 import Categories from './Categories.js';
+import $ from 'jquery';
 
 
 class Round {
@@ -10,6 +11,7 @@ class Round {
     this.finalRound = [];
     this.currentQuestion = {};
     this.stage = 1;
+    this.roundCounter = 16;
     // this.dDouble = undefined; 
     // this.wager = undefined;
     // this.ddCount = 0;
@@ -42,7 +44,26 @@ class Round {
   }
 
   gameBoardTargeter(boxId, game) {
-    domUpdates.gameBoardListener(boxId, game);
+    if(this.stage === 1) {
+      domUpdates.gameBoardListener(boxId, game, this.roundOne);
+    } else {
+      domUpdates.gameBoardListener(boxId, game, this.roundTwo);
+    }
+  }
+
+  questionCounter(game) {
+    this.roundCounter--;
+
+    if(this.roundCounter === 0) {
+      this.stage++;
+      this.roundCounter = 16;
+      this.switchRound(game);
+    }
+  }
+
+  switchRound(game) {
+    $('.box-title').removeClass('hidden');
+    domUpdates.displayCategories(game, this.roundTwo);
   }
 
 }

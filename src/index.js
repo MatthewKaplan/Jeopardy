@@ -21,7 +21,7 @@ let game = new Game();
 $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
-  domUpdates.displayCategories(game);
+  domUpdates.displayCategories(game, game.round.roundOne);
 });
 
 $('.questions-container').on('click', '.box', () => {
@@ -40,6 +40,7 @@ $('.correctAns').on('click', '.next-question', () => {
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
   domUpdates.updateScores(game);
+  game.round.questionCounter(game);
 });
 
 $('.wrongAns').on('click', '.next-turn', () => {
@@ -47,6 +48,7 @@ $('.wrongAns').on('click', '.next-turn', () => {
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
   domUpdates.updateScores(game);
+  game.round.questionCounter(game);
 });
 
 
