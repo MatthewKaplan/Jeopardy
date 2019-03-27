@@ -14,6 +14,7 @@ export default {
     $('.correctAns').addClass('hidden');
     $('.wrongAns').addClass('hidden');
     $('.question-display').addClass('hidden');
+    $('.wager-display').addClass('hidden');
   },
 
   grabNames() {
@@ -40,6 +41,7 @@ export default {
 
   gameBoardListener(boxId, game, currRound) {
     let boxInfo = currRound[boxId];
+    console.log(boxInfo);
     game.round.currentQuestion = boxInfo;
     let boxValue = boxInfo.pointValue;
     this.showQuestion(boxInfo);
@@ -64,15 +66,20 @@ export default {
     let ansText = ans.innerText.valueOf();
     let answer = boxInfo.answer.valueOf();
 
-    if(ansText === answer){
-      console.log(game.round.stage);
+    $('.question-display').addClass('hidden');
+    
+    if ((ansText === answer) && (game.round.roundCounter === game.round.dDouble)){
+      game.currentPlayer.ddCorrect(boxInfo, game.round.wager);
+      $('.correctAns').removeClass('hidden');
+    } else if ((ansText != answer) && (game.round.roundCounter === game.round.dDouble)) {
+      game.currentPlayer.ddWrong(boxInfo, game.round.wager);
+      $('.wrongAns').removeClass('hidden');
+      game.updatePlayerTurn();
+    } else if (ansText === answer) {
       game.round.stage === 1 ? game.currentPlayer.correct(boxInfo, 1) : game.currentPlayer.correct(boxInfo, 2);
-      $('.question-display').addClass('hidden');
       $('.correctAns').removeClass('hidden');
     } else {
-      console.log(game.round.stage);
       game.round.stage === 1 ? game.currentPlayer.wrong(boxInfo, 1) : game.currentPlayer.wrong(boxInfo, 2);
-      $('.question-display').addClass('hidden');
       $('.wrongAns').removeClass('hidden');
       game.updatePlayerTurn();
     }
@@ -98,6 +105,33 @@ export default {
     $('.400').text(800);
   },
 
+
+  wager(event, game) {
+
+    console.log('WAGER');
+
+    $('.player-section').addClass('hidden');
+    $('.wager-display').removeClass('hidden');
+    $('.game').addClass('hidden');
+
+    var playerWager = `
+          <section class="daily-double-prompt">
+            <h1 class="question-title">DAILY DOUBLE!</h1>
+            <label class="wager" for="wager-input">
+              Please enter your wager:
+              <input type="number" class="wager-input">
+            </label><br>
+            <button class="wager-button">Submit Wager</button>
+          </section>`;
+        $('.wager-display').html(playerWager);
+        $('.wager-button').on('click', () => {
+          game.round.wager = $('.wager-input').val();
+          $('.wager-display').addClass('hidden');
+          $('.question-display').removeClass('hidden');
+          console.log(game.round.wager);
+        })
+  },
+        
   resetGame() {
     location.reload();
   }

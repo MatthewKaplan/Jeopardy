@@ -12,6 +12,7 @@ describe ('Player', () => {
   it('should have default properties', () => {
     expect(player.name).to.equal(undefined);
     expect(player.score).to.equal(undefined || 0);
+    expect(player.playerWager).to.equal(0);
   })
 
   it('should be an instance of Player', () => {

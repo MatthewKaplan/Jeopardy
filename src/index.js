@@ -22,13 +22,17 @@ $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
   domUpdates.displayCategories(game, game.round.roundOne);
-  // domUpdates.doubleBoardPoints();
 });
 
 $('.questions-container').on('click', '.box', () => {
-  let boxId = event.target.parentElement.id;
-  game.round.gameBoardTargeter(boxId, game);
-  event.target.classList.add('hidden');
+  if (game.round.roundCounter === game.round.dDouble) {
+    game.round.dailyDouble(event, game);
+    event.target.classList.add('hidden');
+  } else {
+    let boxId = event.target.parentElement.id;
+    game.round.gameBoardTargeter(boxId, game);
+    event.target.classList.add('hidden');
+  }
 });
 
 $('.question-display').on('click', '.ans-btn', () => {
