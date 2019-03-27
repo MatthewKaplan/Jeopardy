@@ -12,9 +12,9 @@ class Round {
     this.currentQuestion = {};
     this.stage = 1;
     this.roundCounter = 16;
-    // this.dDouble = undefined; 
-    // this.wager = undefined;
-    // this.ddCount = 0;
+    this.dDouble; 
+    this.wager;
+    this.ddCount = 0;
     this.categories = new Categories();
   }
 
@@ -26,6 +26,7 @@ class Round {
     this.roundOne = this.createRounds(roundOneArr, 1, 5, 100).flat();
     this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100).flat();
     this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400);
+    this.dDouble = this.dailyDoubleIndex();
   }
 
   createRounds(round, startNum, endNum, value) {
@@ -42,7 +43,6 @@ class Round {
     }, []);
     return roundArr;
   }
-
 
   gameBoardTargeter(boxId, game) {
     if(this.stage === 1) {
@@ -66,6 +66,14 @@ class Round {
   switchRound(game) {
     $('.box-title').removeClass('hidden');
     domUpdates.displayCategories(game, this.roundTwo);
+  }
+
+  dailyDoubleIndex() {
+    return Math.floor(Math.random() * Math.floor(this.roundCounter)) + 1;
+  }
+
+  dailyDouble(event, game) {
+    domUpdates.wager(event, game);
   }
 
 }

@@ -200,7 +200,8 @@ input {
 
 .question-display,
 .correctAns,
-.wrongAns {
+.wrongAns,
+.wager-display {
   /*border: 2px solid red;*/
   /*width: 80%;*/
   margin: auto;
@@ -235,3 +236,14 @@ input {
 .player-turn {
   background-color: #42649b;
 }
+
+.daily-double-prompt {
+  align-items: center;
+  align-content: center;
+}
+
+
+
+
+
+
