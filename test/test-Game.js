@@ -4,7 +4,6 @@ import domUpdates from '../src/domUpdates.js';
 import spies from 'chai-spies';
 import Round from '../src/Round.js';
 import Player from '../src/Player.js';
-import $ from 'jquery';
 chai.use(spies);
 const expect = chai.expect;
 
