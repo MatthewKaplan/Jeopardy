@@ -10,6 +10,7 @@ export default {
     $('.start-page').hide();
     $('header').removeClass('hidden');
     $('section').removeClass('hidden');
+    $('.question-display').addClass('hidden');
     $('.correctAns').addClass('hidden');
     $('.wrongAns').addClass('hidden');
     $('.question-display').addClass('hidden');
@@ -96,7 +97,7 @@ export default {
     $('.300').text(600);
     $('.400').text(800);
   }
-
+  
 }
 
 
