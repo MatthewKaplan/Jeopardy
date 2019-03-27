@@ -96,6 +96,10 @@ export default {
     $('.200').text(400);
     $('.300').text(600);
     $('.400').text(800);
+  },
+
+  resetGame() {
+    location.reload();
   }
   
 }
