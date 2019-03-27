@@ -105,6 +105,7 @@ export default {
     $('.400').text(800);
   },
 
+
   wager(event, game) {
 
     console.log('WAGER');
@@ -129,6 +130,10 @@ export default {
           $('.question-display').removeClass('hidden');
           console.log(game.round.wager);
         })
+  },
+        
+  resetGame() {
+    location.reload();
   }
   
 }

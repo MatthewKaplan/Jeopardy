@@ -15,11 +15,10 @@ body {
   height: 100vh;
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
 }
+
 h1 {
   margin-top: 0px;
-  /*-webkit-text-stroke: #FFEEB7;*/
   color: #FFEEB7;
-  text-shadow: 1px 1px 2px #fff;
   font-size: 70px;
   text-align: center;
 }
@@ -27,22 +26,25 @@ h1 {
 h2 {
   margin-top: 0;
   color: #FFEEB7;
-  text-shadow: .5px .5px 1px #fff;
-  font-size: 30px;
+  font-size: 50px;
   text-align: center;
 }
 
 .rick {
-  /*border: solid;*/
   display: flex;
-  flex-direction: row;
+}
+
+.players {
+  display: flex;
+  flex-wrap: row;
+  text-align: center;
+  padding-left: 10px;
 }
 
 label {
   margin-top: 0;
   color: #FFEEB7;
-  text-shadow: .5px .5px 1px #fff;
-  font-size: 40px;
+  font-size: 30px;
 
 }
 
@@ -53,25 +55,22 @@ input {
 
 .rick-sanchez {
   border-radius: 50px;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 
-.play-game-btn:hover {
-  background-color: grey;
-  cursor: pointer;
-}
 
 .play-game-btn {
-  height: 65px;
-  width: 400px;
+  background-color: #1C7CAE;
+  height: 45px;
+  width: 200px;
   margin-top: 50px;
   border-radius: 25px;
-  background-color: #FFEEB7;
-  font-size: 50px;
-  color: #42649b;
-  text-shadow: .5px .5px 1px #fff;
+  font-size: 30px;
+  color: #FFEEB7;
 }
+
+
 
 .btn {
   display: flex;
@@ -81,35 +80,45 @@ input {
 
 /*Main Page*/
 
+
+/*Header*/
 .header-bar {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  height: 80px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px; 
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+  align-content: center;
+}
+
+.round {
+  margin-top: 10px;
+  font-size: 25px;
+  color: #FFEEB7;
+  margin-left: 20px;
 }
 
 .main-title {
-  margin-bottom: 10px;
+  margin-top: 10px;
   font-size: 35px;
   color: #FFEEB7;
 }
 
 .reset-btn {
-  height: 40px;
-  width: 250px;
+  height: 30px;
+  width: 200px;
   margin-top: 20px;
+  margin-right: 20px;
   border-radius: 25px;
-  background-color: #42649b;
-  font-size: 35px;
+  background-color: #1C7CAE;
+  font-size: 20px;
   color: #FFEEB7;
   text-shadow: .5px .5px 1px #fff;
 }
 
-.reset-btn:hover {
-  background-color: grey;
-  cursor: pointer;
-}
+
+
+/*Main*/
 
 .game{
   background-image:linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
@@ -129,7 +138,7 @@ input {
 }
 
 .categories-box{
-  background-color: #1C7CAE;
+  background-color: #42649b;
   font-weight: 800;
   color: #fff;
   border-radius: 5px;
@@ -155,39 +164,41 @@ input {
 .box {
   background-color: #1C7CAE;
   border: none;
-  /*border: 2px solid black;*/
   color: #f0e14a;
   border-radius: 5px;
-  font-size: 55px;
-  text-align: center;
-  z-index: 2;
-  cursor: pointer;
-}
-
-.box:hover {
-  /*-webkit-text-stroke: 1.25px #f0e14a;*/
-  background-color: #42649b;
 }
 
 .player {
-  /*background-color: #1C7CAE;*/
   height: 100px;
   width: 100px;
-  /*border: none;*/
   border-radius: 25px;
 }
 
-.players,
 .player-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin-top: 0px;
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+  padding-top: 20px;
+  height: 400px;
+  padding-right: 70px;
 }
 
-.player-section {
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  padding-bottom: 60px;
+.player-turn {
+  background-image: linear-gradient(to top, #57719b, #42649b);
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 170px;
+  height: 170px;
+}
+
+.player-score, 
+.player-name {
+  color: #FFEEB7;
+  font-size: 30px;
+  width: 200px;
 }
 
 .hidden {
@@ -200,29 +211,30 @@ input {
 
 .question-display,
 .correctAns,
-.wrongAns,
-.wager-display {
-  /*border: 2px solid red;*/
-  /*width: 80%;*/
+.wrongAns {
   margin: auto;
   height: 100vh;
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
 }
 
+.question-title {
+  color: #FFEEB7;
+  text-shadow: none;
+  padding-top: 30px;
+  font-size: 30px;
+}
 
+.next-question,
 .next-turn,
 .ans-btn {
-  /*height: 80px;
-  margin-bottom: 20px;
-  width: 300px;*/
-  height: 65px;
-  width: 400px;
+  height: 200px;
+  width: 500px;
   margin-top: 50px;
   border-radius: 25px;
-  background-color: #FFEEB7;
-  font-size: 50px;
-  color: #42649b;
-  text-shadow: .5px .5px 1px #fff;
+  border: none;
+  background-color: #1C7CAE;
+  font-size: 40px;
+  color: #FFEEB7;
 }
 
 .potential-answers,
@@ -233,16 +245,15 @@ input {
   flex-wrap: wrap;
 }
 
-.player-turn {
-  background-color: #42649b;
+.play-game-btn:hover,
+.reset-btn:hover,
+.next-question:hover,
+.box:hover,
+.ans-btn:hover,
+.next-turn:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to top, #57719b, #42649b);
 }
-
-.daily-double-prompt {
-  align-items: center;
-  align-content: center;
-}
-
-
 
 
 

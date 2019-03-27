@@ -60,6 +60,10 @@ class Game {
     }
     this.playerIndex++;
   } 
+
+  reset() {
+    domUpdates.resetGame();
+  }
 }
 
 

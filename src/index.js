@@ -56,6 +56,10 @@ $('.wrongAns').on('click', '.next-turn', () => {
   game.round.questionCounter(game);
 });
 
+$('.reset-btn').on('click', () => {
+  game.reset();
+})
+
 
 
 
