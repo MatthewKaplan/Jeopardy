@@ -7,12 +7,12 @@ class Player {
     this.score = score || 0;
   }
 
-  wrong(boxInfo){
-    this.score -= boxInfo.pointValue;
+  wrong(boxInfo, i){
+    this.score -= boxInfo.pointValue * i;
   }
 
-  correct(boxInfo){
-    this.score += boxInfo.pointValue;
+  correct(boxInfo, i){
+    this.score += boxInfo.pointValue * i;
   }
 }
 

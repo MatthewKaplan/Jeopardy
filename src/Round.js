@@ -43,6 +43,7 @@ class Round {
     return roundArr;
   }
 
+
   gameBoardTargeter(boxId, game) {
     if(this.stage === 1) {
       domUpdates.gameBoardListener(boxId, game, this.roundOne);
@@ -56,6 +57,7 @@ class Round {
 
     if(this.roundCounter === 0) {
       this.stage++;
+      domUpdates.doubleBoardPoints();
       this.roundCounter = 16;
       this.switchRound(game);
     }

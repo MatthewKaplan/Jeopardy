@@ -22,7 +22,7 @@ $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
   domUpdates.displayCategories(game, game.round.roundOne);
-  console.log(game);
+  // domUpdates.doubleBoardPoints();
 });
 
 $('.questions-container').on('click', '.box', () => {

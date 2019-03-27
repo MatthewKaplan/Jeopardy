@@ -12,6 +12,7 @@ export default {
     $('section').removeClass('hidden');
     $('.correctAns').addClass('hidden');
     $('.wrongAns').addClass('hidden');
+    $('.question-display').addClass('hidden');
   },
 
   grabNames() {
@@ -37,7 +38,6 @@ export default {
   },
 
   gameBoardListener(boxId, game, currRound) {
-    console.log(boxId);
     let boxInfo = currRound[boxId];
     game.round.currentQuestion = boxInfo;
     let boxValue = boxInfo.pointValue;
@@ -64,11 +64,13 @@ export default {
     let answer = boxInfo.answer.valueOf();
 
     if(ansText === answer){
-      game.currentPlayer.correct(boxInfo);
+      console.log(game.round.stage);
+      game.round.stage === 1 ? game.currentPlayer.correct(boxInfo, 1) : game.currentPlayer.correct(boxInfo, 2);
       $('.question-display').addClass('hidden');
       $('.correctAns').removeClass('hidden');
     } else {
-      game.currentPlayer.wrong(boxInfo, game);
+      console.log(game.round.stage);
+      game.round.stage === 1 ? game.currentPlayer.wrong(boxInfo, 1) : game.currentPlayer.wrong(boxInfo, 2);
       $('.question-display').addClass('hidden');
       $('.wrongAns').removeClass('hidden');
       game.updatePlayerTurn();
@@ -86,9 +88,27 @@ export default {
         <h3 class="player-score" id="player-${ind}-total">Score: ${player.score} </h3>
       `);
     })
+  },
 
+  doubleBoardPoints() {
+    $('.100').text(200);
+    $('.200').text(400);
+    $('.300').text(600);
+    $('.400').text(800);
   }
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
