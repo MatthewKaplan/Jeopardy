@@ -10,6 +10,7 @@ export default {
     $('.start-page').hide();
     $('header').removeClass('hidden');
     $('section').removeClass('hidden');
+    $('.question-display').addClass('hidden');
     $('.correctAns').addClass('hidden');
     $('.wrongAns').addClass('hidden');
   },
@@ -86,8 +87,10 @@ export default {
         <h3 class="player-score" id="player-${ind}-total">Score: ${player.score} </h3>
       `);
     })
+  },
 
-  }
+
+  
 }
 
 

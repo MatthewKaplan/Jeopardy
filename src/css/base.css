@@ -32,17 +32,29 @@ h2 {
   text-align: center;
 }
 
+.rick {
+  /*border: solid;*/
+  display: flex;
+  flex-direction: row;
+}
+
 label {
   margin-top: 0;
   color: #FFEEB7;
   text-shadow: .5px .5px 1px #fff;
-  font-size: 20px;
+  font-size: 40px;
 
 }
 
+input {
+  height: 30px;
+  width: 200px;
+}
+
 .rick-sanchez {
-  height: 100px;
-  width: 100px;
+  border-radius: 50px;
+  height: 200px;
+  width: 200px;
 }
 
 .play-game-btn:hover {
@@ -158,10 +170,11 @@ label {
 }
 
 .player {
-  background-color: #1C7CAE;
-  height: 200px;
-  width: 200px;
-  border: solid;
+  /*background-color: #1C7CAE;*/
+  height: 100px;
+  width: 100px;
+  /*border: none;*/
+  border-radius: 25px;
 }
 
 .players,
