@@ -24,6 +24,7 @@ describe('Game', () => {
   it('should have default properties', () => {
     expect(game.players).to.deep.equal([]);
     expect(game.allData).to.deep.equal([[], [], [], [], [], [], [], [], [], []]);
+    expect(game.round).to.be.an.instanceOf(Round);
     expect(game.currentPlayer).to.deep.equal({});
     expect(game.playerIndex).to.equal(0);
   })

@@ -3,16 +3,18 @@ import Round from '../src/Round.js';
 import Game from '../src/Game.js';
 import Categories from '../src/Categories.js';
 import domUpdates from '../src/domUpdates.js';
+import data from '../src/data.js';
 import spies from 'chai-spies';
 chai.use(spies);
 const expect = chai.expect;
+
+chai.spy.on(domUpdates, ['displayCategories', 'gameBoardListener'], () => true);
 
 describe ('Round', () => {
 
   let game;
   beforeEach(() => {
     game = new Game();
-    // round = new Round();
   })
 
   it('should be an instance of Round', () => {
@@ -26,7 +28,21 @@ describe ('Round', () => {
     expect(game.round.currentQuestion).to.deep.equal({});
     expect(game.round.stage).to.equal(1);
     expect(game.round.roundCounter).to.equal(16);
+    expect(game.round.categories).to.be.an.instanceOf(Categories);
   })
+
+  it('should sort data into seperate rounds arrays', () => {
+    game.getRandomData();
+    game.round.sortRounds(game.allData);
+
+    expect(game.round.roundOne.length).to.equal(16);
+    expect(game.round.roundTwo.length).to.equal(16);
+    expect(game.round.finalRound.length).to.equal(1);
+  })
+
+  // it('should change rounds', () => {
+
+  // })
 
 
 
