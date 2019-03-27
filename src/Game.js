@@ -49,10 +49,12 @@ class Game {
     this.players.push(player1);
     this.players.push(player2);
     this.players.push(player3);
+    console.log(this.players);
   }
 
   updatePlayerTurn() {
     this.currentPlayer = this.players[this.playerIndex];
+    console.log(this.currentPlayer);
     domUpdates.playerTurn(this);
     if(this.playerIndex === 2) {
       this.playerIndex = 0;

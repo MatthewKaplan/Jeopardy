@@ -22,6 +22,7 @@ $('.play-game-btn').on('click', function(e){
   e.preventDefault();
   game.startGame();
   domUpdates.displayCategories(game, game.round.roundOne);
+  console.log(game);
 });
 
 $('.questions-container').on('click', '.box', () => {
