@@ -44,7 +44,7 @@ const data = {
       categoryId: 10
     },
     {
-      question: "(Hi, I'm Billy Ray Cyrus.)  In 2001 I began practicing medicine in the Big Apple on this Pax TV drama",
+      question: "In 2001 I began practicing medicine in the Big Apple on this Pax TV drama",
       pointValue: 400,
       potentialAnswers: ["Doc", "Cosby Show", "Dora the explorer", "Casual"],
       answer: "Doc",
@@ -624,9 +624,9 @@ const data = {
       categoryId: 3
     },
     {
-      question: '(<a href="http://www.j-archive.com/media/2005-12-21_J_25.jpg" target="_blank">Hi!  I\'m CNN senior medical correspondent Dr. Sanjay Gupta.</a>)  I joined CNN in 2001 & reported on the biological attacks of this bacillus in the news that October',
+      question: 'Hi!  I\'m CNN senior medical correspondent Dr. Sanjay Gupta.  I joined CNN in 2001 & reported on the biological attacks of this bacillus in the news that October',
       answer: 'anthrax',
-      potentialAnswers: ["anthrax", "vicodin", "PBR", "ricin"],
+      potentialAnswers: ["anthrax", "vicodin", "that blue pill", "ricin"],
       pointValue: 300,
       categoryId: 3
     },
