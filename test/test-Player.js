@@ -1,5 +1,6 @@
 import chai from 'chai';
 import Player from '../src/Player.js'
+import Round from '../src/Round.js'
 const expect = chai.expect;
 
 describe ('Player', () => {
@@ -12,7 +13,6 @@ describe ('Player', () => {
   it('should have default properties', () => {
     expect(player.name).to.equal(undefined);
     expect(player.score).to.equal(undefined || 0);
-    expect(player.playerWager).to.equal(0);
   })
 
   it('should be an instance of Player', () => {
@@ -29,4 +29,24 @@ describe ('Player', () => {
     expect(player.score).to.equal(0);
   }) 
 
+  it ('should be able to subtract from player score', () => {
+    const player = new Player('Matthew', 100);
+    player.ddWrong(10);
+    expect(player.score).to.equal(80);
+  })
+
+  it ('should be able to add to player score', () => {
+    const player = new Player('Matthew', 100);
+    player.ddCorrect(10);
+    expect(player.score).to.equal(120);
+  })
+
 })
+
+
+
+
+
+
+
+

@@ -46,14 +46,16 @@ export default {
     $('.player-section').addClass('hidden');
     $('.game').addClass('hidden');
     $('.question-display').removeClass('hidden');
-    var currentQuestion = ` 
+    var currentQuestion = `
+        <section class="center-btns">
           <h1 class="question-title">${boxInfo.question}</h1>
             <div class="potential-answers">
               <button class="ans-btn" id="answer1">${boxInfo.potentialAnswers[0]}</button>
               <button class="ans-btn" id="answer2">${boxInfo.potentialAnswers[1]}</button>
               <button class="ans-btn" id="answer3">${boxInfo.potentialAnswers[2]}</button>
               <button class="ans-btn" id="answer4">${boxInfo.potentialAnswers[3]}</button>
-            </div>`;
+            </div>
+        </section>`;
     $(".question-display").html(currentQuestion);
   },
 
@@ -104,7 +106,6 @@ export default {
     $('.400').text(800);
   },
 
-
   wager(event, game, boxId) {
     $('.player-section').addClass('hidden');
     $('.wager-display').removeClass('hidden');
@@ -127,20 +128,6 @@ export default {
     })
   },
 
-
-  // getImageTag() {
-  //   let imageURLs = [
-  //        "https://i.imgur.com/0AYPvgcm.jpg"
-  //      , "hhttps://i.imgur.com/bl7HSfNm.jpg"
-  //      , "https://i.imgur.com/Xcb3v1pm.jpg"
-  //   ];
-  //   let img = '<img src=\"';
-  //   let randomIndex = Math.floor(Math.random() * imageURLs.length);
-  //   img += imageURLs[randomIndex];
-  //   img += '\" alt=\"Some alt text\"/>';
-  //   return img;
-  // },
-        
   resetGame() {
     location.reload();
   }
