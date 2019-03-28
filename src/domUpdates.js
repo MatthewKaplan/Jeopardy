@@ -14,7 +14,7 @@ export default {
   },
 
   grabNames() {
-    let $players = [$('#player1').val(), $('#player2').val(), $('#player3').val()];
+    let $players = [$('.player1').val(), $('.player2').val(), $('.player3').val()];
     $('.player-1-name').text($players[0]);
     $('.player-2-name').text($players[1]);
     $('.player-3-name').text($players[2]);
