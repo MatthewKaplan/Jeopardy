@@ -44,7 +44,7 @@ const data = {
       categoryId: 10
     },
     {
-      question: "(Hi, I'm Billy Ray Cyrus.)  In 2001 I began practicing medicine in the Big Apple on this Pax TV drama",
+      question: "In 2001 I began practicing medicine in the Big Apple on this Pax TV drama",
       pointValue: 400,
       potentialAnswers: ["Doc", "Cosby Show", "Dora the explorer", "Casual"],
       answer: "Doc",
