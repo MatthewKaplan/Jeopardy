@@ -1,5 +1,5 @@
 # Jeopardy
-## By Matt and Tim Miller
+## By Matt Kaplan and Tim Miller
 This was a paired project in which we needed to write a program in OOP style in the theme of Revenge of the Nerds.
 
 ## Project Description
