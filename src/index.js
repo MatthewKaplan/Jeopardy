@@ -20,6 +20,16 @@ $('.play-game-btn').on('click', function(e) {
   domUpdates.displayCategories(game, game.round.roundOne);
 });
 
+$(function () {
+  $('.player3, .player2, .player1').keyup(function () {
+      if ($('.player1').val() == '' || $('.player2').val() == '' || $('.player3').val() == '') {
+          $('.play-game-btn').prop('disabled', true);
+      } else {
+          $('.play-game-btn').prop('disabled', false);
+      }
+  });
+});
+
 $('.questions-container').on('click', '.box', () => {
   console.log('roundCounter', game.round.roundCounter);
   console.log('dDouble', game.round.dDouble);

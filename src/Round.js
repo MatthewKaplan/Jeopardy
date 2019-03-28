@@ -63,6 +63,7 @@ class Round {
 
   switchRound(game) {
     $('.box-title').removeClass('hidden');
+    $('.round-num').text(2);
     domUpdates.displayCategories(game, this.roundTwo);
   }
 
