@@ -46,25 +46,18 @@ class Round {
       domUpdates.gameBoardListener(boxId, game, this.roundOne);
     } else {
       domUpdates.gameBoardListener(boxId, game, this.roundTwo);
-    }
+    } 
   }
 
   questionCounter(game) {
     this.roundCounter--;
-
     if (this.roundCounter === 0) {
       this.stage++;
       domUpdates.doubleBoardPoints();
       this.roundCounter = 16;
       this.dDouble = this.dailyDoubleIndex();
-      this.switchRound(game);
+      domUpdates.switchRound(game);
     }
-  }
-
-  switchRound(game) {
-    $('.box-title').removeClass('hidden');
-    $('.round-num').text(2);
-    domUpdates.displayCategories(game, this.roundTwo);
   }
 
   dailyDoubleIndex() {

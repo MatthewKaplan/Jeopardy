@@ -253,11 +253,11 @@ input {
 }
 
 .potential-answers {
-  max-width: 1450px;
   align-content: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 1450px;
 }
 
 .next-btn {
@@ -306,8 +306,12 @@ input {
 }
 
 .center-btns {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: 2px solid red;
 }
+
+.play-game-btn:disabled {
+  cursor: default;
+}
+

@@ -27,6 +27,9 @@ describe ('Round', () => {
     expect(game.round.currentQuestion).to.deep.equal({});
     expect(game.round.stage).to.equal(1);
     expect(game.round.roundCounter).to.equal(16);
+    expect(game.round.dDouble).to.equal(undefined);
+    expect(game.round.wager).to.equal(undefined);
+    expect(game.round.ddCount).to.equal(0);
     expect(game.round.categories).to.be.an.instanceOf(Categories);
   })
 
@@ -38,14 +41,5 @@ describe ('Round', () => {
     expect(game.round.roundTwo.length).to.equal(16);
     expect(game.round.finalRound.length).to.equal(1);
   })
-
-  // it('should change rounds', () => {
-
-  // })
-
-
-
-
-
   
 })

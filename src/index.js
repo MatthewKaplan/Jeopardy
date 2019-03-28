@@ -22,18 +22,15 @@ $('.play-game-btn').on('click', function(e) {
 
 $(function () {
   $('.player3, .player2, .player1').keyup(function () {
-      if ($('.player1').val() == '' || $('.player2').val() == '' || $('.player3').val() == '') {
-          $('.play-game-btn').prop('disabled', true);
-      } else {
-          $('.play-game-btn').prop('disabled', false);
-      }
+    if ($('.player1').val() === '' || $('.player2').val() === '' || $('.player3').val() === '') {
+      $('.play-game-btn').prop('disabled', true);
+    } else {
+      $('.play-game-btn').prop('disabled', false);
+    }
   });
 });
 
 $('.questions-container').on('click', '.box', () => {
-  console.log('roundCounter', game.round.roundCounter);
-  console.log('dDouble', game.round.dDouble);
-
   if (game.round.roundCounter === game.round.dDouble) {
     let boxId = event.target.parentElement.id;
     domUpdates.wager(event, game, boxId);
@@ -68,7 +65,7 @@ $('.wrongAns').on('click', '.next-turn', () => {
 
 $('.reset-btn').on('click', () => {
   game.reset();
-})
+});
 
 
 
