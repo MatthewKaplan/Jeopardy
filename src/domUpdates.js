@@ -123,9 +123,21 @@ export default {
     $('.wager-display').html(playerWager);
     $('.wager-button').on('click', () => {
       game.round.wager = $('.wager-input').val();
+
+      console.log($('.wager-input').val());
       $('.wager-display').addClass('hidden');
       game.round.gameBoardTargeter(boxId, game);
     })
+  },
+
+  appendPhoto(img) {
+    $('.image').html(img);
+  },
+
+  switchRound(game) {
+    $('.box-title').removeClass('hidden');
+    $('.round-num').text(2);
+    this.displayCategories(game, game.round.roundTwo);
   },
 
   resetGame() {
@@ -133,17 +145,3 @@ export default {
   }
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

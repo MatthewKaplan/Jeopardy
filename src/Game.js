@@ -71,11 +71,11 @@ class Game {
   }
 
   getImageTag(images) {
-    let img = '<img src=\"';
+    let img = '<img src="';
     let randomIndex = Math.floor(Math.random() * images.length);
     img += images[randomIndex];
-    img += '\" alt=\"Wrong\"/>';
-    $('.image').html(img);
+    img += '" alt="Wrong">';
+    domUpdates.appendPhoto(img);
   }
 
   reset() {

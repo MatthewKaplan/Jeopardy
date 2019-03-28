@@ -4,10 +4,11 @@ import domUpdates from '../src/domUpdates.js';
 import spies from 'chai-spies';
 import Round from '../src/Round.js';
 import Player from '../src/Player.js';
+
 chai.use(spies);
 const expect = chai.expect;
 
-chai.spy.on(domUpdates, ['playerTurn'], () => true);
+chai.spy.on(domUpdates, ['playerTurn', 'appendPhoto'], () => true);
 
 describe('Game', () => {
   let game;
@@ -26,6 +27,8 @@ describe('Game', () => {
     expect(game.round).to.be.an.instanceOf(Round);
     expect(game.currentPlayer).to.deep.equal({});
     expect(game.playerIndex).to.equal(0);
+    expect(game.wrongImages).to.deep.equal([]);
+    expect(game.correctImages).to.deep.equal([]);
   })
 
   it('should have three player objs', () => {
@@ -65,6 +68,25 @@ describe('Game', () => {
     expect(game.playerIndex).to.equal(game.playerIndex);
   })
 
+  it('should retrieve images from data and store them as arrays', () => {
+    game.grabImages();
+    expect(game.wrongImages).to.be.an('Array');
+    expect(game.correctImages).to.be.an('Array');
+    expect(game.wrongImages).to.have.lengthOf(6);
+    expect(game.correctImages).to.have.lengthOf(7);
+  })
 
+  it('should include a shuffle method to shuffle arrays', () => {
+    let a = [ 4, 6, 2, 6, 4, 2, 5, 88, 43, 234, 643, 234, 645];
+    expect(a[0]).to.not.equal(game.shuffle(a)[0]);
+  })
 
 })
+
+
+
+
+
+
+
+

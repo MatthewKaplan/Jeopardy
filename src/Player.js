@@ -2,6 +2,7 @@ class Player {
   constructor(name, score) {
     this.name = name;
     this.score = score || 0;
+    this.playerWager = 0;
   }
 
   wrong(boxInfo, i) {

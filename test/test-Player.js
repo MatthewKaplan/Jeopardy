@@ -1,6 +1,5 @@
 import chai from 'chai';
 import Player from '../src/Player.js'
-import Round from '../src/Round.js'
 const expect = chai.expect;
 
 describe ('Player', () => {
