@@ -21,6 +21,7 @@ h1 {
   color: #FFEEB7;
   font-size: 70px;
   text-align: center;
+  padding-top: 30px;
 }
 
 h2 {
@@ -217,6 +218,7 @@ input {
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
 }
 
+
 .question-title {
   color: #FFEEB7;
   text-shadow: none;
@@ -224,6 +226,7 @@ input {
   font-size: 30px;
 }
 
+.wager-button,
 .next-question,
 .next-turn,
 .ans-btn {
@@ -245,6 +248,7 @@ input {
   flex-wrap: wrap;
 }
 
+.wager-button:hover,
 .play-game-btn:hover,
 .reset-btn:hover,
 .next-question:hover,
@@ -253,6 +257,11 @@ input {
 .next-turn:hover {
   cursor: pointer;
   background-image: linear-gradient(to top, #57719b, #42649b);
+}
+
+.daily-double-prompt {
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+  height: 100vh;
 }
 
 
