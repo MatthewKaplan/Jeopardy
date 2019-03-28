@@ -17,6 +17,7 @@ let game = new Game();
 $('.play-game-btn').on('click', function(e) {
   e.preventDefault();
   game.startGame(game);
+  domUpdates.displayCategories(game, game.round.roundOne);
 });
 
 $('.questions-container').on('click', '.box', () => {

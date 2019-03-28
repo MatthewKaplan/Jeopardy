@@ -14,7 +14,6 @@ class Game {
 
   startGame(game) {
     domUpdates.hideStartScreen();
-    domUpdates.displayCategories(game, game.round.roundOne);
     let names = domUpdates.grabNames();
     this.createPlayers(names);
     this.getRandomData();
