@@ -212,7 +212,8 @@ input {
 
 .question-display,
 .correctAns,
-.wrongAns {
+.wrongAns,
+.daily-double-prompt {
   margin: auto;
   height: 100vh;
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
@@ -262,6 +263,24 @@ input {
 .daily-double-prompt {
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
   height: 100vh;
+}
+
+.daily-double-prompt {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-double-title {
+  font-size: 150px;
+  -webkit-text-stroke: .75px black;
+}
+
+.start-screen-title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
 

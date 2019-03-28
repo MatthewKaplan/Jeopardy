@@ -102,19 +102,18 @@ export default {
 
 
   wager(event, game, boxId) {
-    console.log('domUpdates wager')
     $('.player-section').addClass('hidden');
     $('.wager-display').removeClass('hidden');
     $('.game').addClass('hidden');
 
     var playerWager = `
           <section class="daily-double-prompt">
-            <h1 class="question-title">DAILY DOUBLE!</h1>
-            <label class="wager" for="wager-input">
-              Please enter your wager:
-              <input type="number" class="wager-input">
-            </label><br>
-            <button class="wager-button">Submit Wager</button>
+            <h1 class="question-title daily-double-title">DAILY DOUBLE!</h1>
+              <label class="wager" for="wager-input">
+                Please enter your wager:
+                <input type="number" class="wager-input">
+              </label><br>
+              <button class="wager-button">Submit Wager</button>
           </section>`;
     $('.wager-display').html(playerWager);
     $('.wager-button').on('click', () => {
