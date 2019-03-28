@@ -1,8 +1,4 @@
 import Game from './Game.js';
-import Categories from './Categories.js';
-import Question from './Question.js';
-import Round from './Round.js';
-import Player from './Player.js';
 
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file
@@ -18,7 +14,7 @@ import domUpdates from './domUpdates.js';
 
 let game = new Game();
 
-$('.play-game-btn').on('click', function(e){
+$('.play-game-btn').on('click', function(e) {
   e.preventDefault();
   game.startGame();
   domUpdates.displayCategories(game, game.round.roundOne);

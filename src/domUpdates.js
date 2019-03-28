@@ -1,8 +1,4 @@
 import $ from 'jquery';
-import Categories from './Categories.js';
-import Game from './Game.js';
-import Round from './Round.js';
-import Player from './Player.js';
 
 export default {
 
@@ -29,21 +25,19 @@ export default {
     game.round.categories.grabCategories();
     const topics = game.round.categories.categoriesArr;
     const topicsArr = [];
-    currRound.forEach((cat, i) => {
+    currRound.forEach((cat) => {
       let catId = cat.categoryId - 1;
       topicsArr.push(topics[catId]);
     });
     let uniqueTopics = [...new Set(topicsArr)];
-    uniqueTopics.forEach((cat,i) => {
+    uniqueTopics.forEach((cat, i) => {
       $(`.cat-${i}`).text(cat);
     })
   },
 
   gameBoardListener(boxId, game, currRound) {
     let boxInfo = currRound[boxId];
-    console.log(boxInfo);
     game.round.currentQuestion = boxInfo;
-    let boxValue = boxInfo.pointValue;
     this.showQuestion(boxInfo);
   },
 
@@ -59,7 +53,7 @@ export default {
               <button class="ans-btn" id="answer3">${boxInfo.potentialAnswers[2]}</button>
               <button class="ans-btn" id="answer4">${boxInfo.potentialAnswers[3]}</button>
             </div>`;
-        $(".question-display").html(currentQuestion);
+    $(".question-display").html(currentQuestion);
   },
 
   checkAnswer(boxInfo, ans, game) {
@@ -68,10 +62,10 @@ export default {
 
     $('.question-display').addClass('hidden');
     
-    if ((ansText === answer) && (game.round.roundCounter === game.round.dDouble)){
+    if ((ansText === answer) && (game.round.roundCounter === game.round.dDouble)) {
       game.currentPlayer.ddCorrect(boxInfo, game.round.wager);
       $('.correctAns').removeClass('hidden');
-    } else if ((ansText != answer) && (game.round.roundCounter === game.round.dDouble)) {
+    } else if ((ansText !== answer) && (game.round.roundCounter === game.round.dDouble)) {
       game.currentPlayer.ddWrong(boxInfo, game.round.wager);
       $('.wrongAns').removeClass('hidden');
       game.updatePlayerTurn();
@@ -107,9 +101,6 @@ export default {
 
 
   wager(event, game) {
-
-    console.log('WAGER');
-
     $('.player-section').addClass('hidden');
     $('.wager-display').removeClass('hidden');
     $('.game').addClass('hidden');
@@ -123,13 +114,12 @@ export default {
             </label><br>
             <button class="wager-button">Submit Wager</button>
           </section>`;
-        $('.wager-display').html(playerWager);
-        $('.wager-button').on('click', () => {
-          game.round.wager = $('.wager-input').val();
-          $('.wager-display').addClass('hidden');
-          $('.question-display').removeClass('hidden');
-          console.log(game.round.wager);
-        })
+    $('.wager-display').html(playerWager);
+    $('.wager-button').on('click', () => {
+      game.round.wager = $('.wager-input').val();
+      $('.wager-display').addClass('hidden');
+      $('.question-display').removeClass('hidden');
+    })
   },
         
   resetGame() {

@@ -3,7 +3,6 @@ import Round from '../src/Round.js';
 import Game from '../src/Game.js';
 import Categories from '../src/Categories.js';
 import domUpdates from '../src/domUpdates.js';
-import data from '../src/data.js';
 import spies from 'chai-spies';
 chai.use(spies);
 const expect = chai.expect;

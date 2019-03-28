@@ -1,8 +1,6 @@
 import domUpdates from './domUpdates.js';
 import data from './data.js';
-import Question from './Question.js';
 import Round from './Round.js';
-import Categories from './Categories.js';
 import Player from './Player.js';
 
 
@@ -54,7 +52,7 @@ class Game {
   updatePlayerTurn() {
     this.currentPlayer = this.players[this.playerIndex];
     domUpdates.playerTurn(this);
-    if(this.playerIndex === 2) {
+    if (this.playerIndex === 2) {
       this.playerIndex = 0;
       return
     }

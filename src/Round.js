@@ -1,4 +1,3 @@
-import Game from './Game.js';
 import domUpdates from './domUpdates.js';
 import Categories from './Categories.js';
 import $ from 'jquery';
@@ -19,7 +18,6 @@ class Round {
   }
 
   sortRounds(dataArr) {
-    const roundArr = dataArr
     let roundOneArr = dataArr.splice(0, 4);
     let roundTwoArr = dataArr.splice(0, 4);
     let finalRoundArr = dataArr.splice(0, 1);
@@ -32,7 +30,7 @@ class Round {
   createRounds(round, startNum, endNum, value) {
     const roundArr = round.reduce((acc, arr) => {
       let subArr = []      
-      for(let i = startNum; i < endNum; i++) {
+      for (let i = startNum; i < endNum; i++) {
         let found = arr.find(el => {
           return el.pointValue === value * i;
         })
@@ -45,7 +43,7 @@ class Round {
   }
 
   gameBoardTargeter(boxId, game) {
-    if(this.stage === 1) {
+    if (this.stage === 1) {
       domUpdates.gameBoardListener(boxId, game, this.roundOne);
     } else {
       domUpdates.gameBoardListener(boxId, game, this.roundTwo);
@@ -55,7 +53,7 @@ class Round {
   questionCounter(game) {
     this.roundCounter--;
 
-    if(this.roundCounter === 0) {
+    if (this.roundCounter === 0) {
       this.stage++;
       domUpdates.doubleBoardPoints();
       this.roundCounter = 16;
