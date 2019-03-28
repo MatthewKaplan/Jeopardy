@@ -2,7 +2,6 @@ class Player {
   constructor(name, score) {
     this.name = name;
     this.score = score || 0;
-    this.playerWager = 0;
   }
 
   wrong(boxInfo, i) {
@@ -13,11 +12,11 @@ class Player {
     this.score += boxInfo.pointValue * i;
   }
 
-  ddWrong(boxInfo, i) {
+  ddWrong(i) {
     this.score -= (i * 2);
   }
 
-  ddCorrect(boxInfo, i) {
+  ddCorrect(i) {
     this.score += (i * 2);
   }
 }

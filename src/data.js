@@ -9,6 +9,28 @@ const data = {
       clues: 1
     },
   },
+
+  wrongImg: {
+        "https://i.imgur.com/0AYPvgcm.jpg": 1,
+        "https://i.imgur.com/bl7HSfNm.jpg": 2,
+        "https://i.imgur.com/SwfJJmem.jpg": 3,
+        "https://i.imgur.com/aRxTQ71m.jpg": 4,
+        "https://i.imgur.com/jO1PP7cm.jpg": 5,
+        "https://i.imgur.com/M3FPdBn.jpg": 6
+  },
+
+  correctImg: {
+        "https://i.imgur.com/aicSbcUm.jpg": 1,
+        "https://i.imgur.com/9oEcmXjm.jpg": 2,
+        "https://i.imgur.com/IYYCMjxm.jpg": 3,
+        "https://i.imgur.com/dHoBBNwm.png": 4,
+        "https://i.imgur.com/ijCWpW6m.jpg": 5,
+        "https://i.imgur.com/uZ4a1bi.jpg": 6,
+        "https://i.imgur.com/tXHnuX3.jpg": 7
+  },
+
+
+
   categories: {
     'unitedStatesHistory': 1,
     'lifeSciences': 2,
