@@ -38,6 +38,7 @@ export default {
   gameBoardListener(boxId, game, currRound) {
     let boxInfo = currRound[boxId];
     game.round.currentQuestion = boxInfo;
+    let boxValue = boxInfo.pointValue;
     this.showQuestion(boxInfo);
   },
 
@@ -57,8 +58,8 @@ export default {
   },
 
   checkAnswer(boxInfo, ans, game) {
-    let ansText = ans.innerText.valueOf();
-    let answer = boxInfo.answer.valueOf();
+    let ansText = ans.innerText.valueOf().toLowerCase();
+    let answer = boxInfo.answer.valueOf().toLowerCase();
 
     $('.question-display').addClass('hidden');
     
@@ -100,7 +101,8 @@ export default {
   },
 
 
-  wager(event, game) {
+  wager(event, game, boxId) {
+    console.log('domUpdates wager')
     $('.player-section').addClass('hidden');
     $('.wager-display').removeClass('hidden');
     $('.game').addClass('hidden');
@@ -118,7 +120,7 @@ export default {
     $('.wager-button').on('click', () => {
       game.round.wager = $('.wager-input').val();
       $('.wager-display').addClass('hidden');
-      $('.question-display').removeClass('hidden');
+      game.round.gameBoardTargeter(boxId, game);
     })
   },
         

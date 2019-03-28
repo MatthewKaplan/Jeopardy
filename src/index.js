@@ -16,13 +16,16 @@ let game = new Game();
 
 $('.play-game-btn').on('click', function(e) {
   e.preventDefault();
-  game.startGame();
-  domUpdates.displayCategories(game, game.round.roundOne);
+  game.startGame(game);
 });
 
 $('.questions-container').on('click', '.box', () => {
+  console.log('roundCounter', game.round.roundCounter);
+  console.log('dDouble', game.round.dDouble);
+
   if (game.round.roundCounter === game.round.dDouble) {
-    game.round.dailyDouble(event, game);
+    let boxId = event.target.parentElement.id;
+    domUpdates.wager(event, game, boxId);
     event.target.classList.add('hidden');
   } else {
     let boxId = event.target.parentElement.id;

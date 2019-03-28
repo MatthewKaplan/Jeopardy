@@ -2,7 +2,6 @@ import domUpdates from './domUpdates.js';
 import Categories from './Categories.js';
 import $ from 'jquery';
 
-
 class Round {
   constructor() {
     this.roundOne = [];
@@ -57,6 +56,7 @@ class Round {
       this.stage++;
       domUpdates.doubleBoardPoints();
       this.roundCounter = 16;
+      this.dDouble = this.dailyDoubleIndex();
       this.switchRound(game);
     }
   }
@@ -68,10 +68,6 @@ class Round {
 
   dailyDoubleIndex() {
     return Math.floor(Math.random() * Math.floor(this.roundCounter)) + 1;
-  }
-
-  dailyDouble(event, game) {
-    domUpdates.wager(event, game);
   }
 
 }

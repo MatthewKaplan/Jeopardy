@@ -3,9 +3,6 @@ import data from './data.js';
 import Round from './Round.js';
 import Player from './Player.js';
 
-
-
-
 class Game {
   constructor() {
     this.players = [];
@@ -15,15 +12,15 @@ class Game {
     this.playerIndex = 0;
   }
 
-  startGame() {
+  startGame(game) {
     domUpdates.hideStartScreen();
+    domUpdates.displayCategories(game, game.round.roundOne);
     let names = domUpdates.grabNames();
     this.createPlayers(names);
     this.getRandomData();
     this.round.sortRounds(this.allData);
     this.updatePlayerTurn();
   }
-
 
   getRandomData() {
     this.allData.forEach((cat, ind) => {
