@@ -109,7 +109,7 @@ const data = {
     {
       question: "Comedy group which went from CBC to NBC to Cinemax",
       pointValue: 300,
-      potentialAnswers: ["The Family Channel", "For American Music", "All in the Family", "All of the above"],
+      potentialAnswers: ["The Family Channel", "SCTV", "All in the Family", "All of the above"],
       answer: "SCTV",
       categoryId: 10
     },
@@ -165,7 +165,7 @@ const data = {
     {
       question: "In India, ghee, which is a clarified form of this, is widely used in cooking",
       pointValue: 100,
-      potentialAnswers: ["butter", "oil", "salt", "pam"],
+      potentialAnswers: ["Butter", "oil", "salt", "pam"],
       answer: "Butter",
       categoryId: 9
     },
@@ -179,14 +179,14 @@ const data = {
     {
       question: "Flavor of the jelly or sauce that's a common accompaniment to roast lamb",
       pointValue: 300,
-      potentialAnswers: ["rasberry", "apple", "mint", "orange"],
+      potentialAnswers: ["Rasberry", "Apple", "Mint", "Orange"],
       answer: "Mint",
       categoryId: 9
     },
     {
       question: "Color of the beans you'd find in a feijoada, the national dish of Brazil",
       pointValue: 400,
-      potentialAnswers: ["purple", "black", "grean", "white"],
+      potentialAnswers: ["Purple", "Black", "Grean", "White"],
       answer: "Black",
       categoryId: 9
     },
@@ -207,7 +207,7 @@ const data = {
     {
       question: "The last name of a nursery rhyme Jack, or a fish that's so high in fat he couldn't eat it",
       pointValue: 200,
-      potentialAnswers: ["sprat", "salmon", "jelly", "bass"],
+      potentialAnswers: ["Sprat", "Salmon", "Jelly", "Bass"],
       answer: "Sprat",
       categoryId: 9
     },
@@ -228,7 +228,7 @@ const data = {
     {
       question: "In a cling peach the flesh clings to this",
       pointValue: 400,
-      potentialAnswers: ["pit", "pull", "push", "pam"],
+      potentialAnswers: ["the pit", "pull", "push", "pam"],
       answer: "the pit",
       categoryId: 9
     },
@@ -305,6 +305,7 @@ const data = {
     {
       question: "An earthquake on April 18, 1906 in this city destroyed the Wells Fargo Bank, but the vaults remained intact",
       pointValue: 100,
+      potentialAnswers: ["San Francisco", "Denver", "Chicago", "Hartford"],
       answer: "San Francisco",
       categoryId: 8
     },
@@ -529,7 +530,7 @@ const data = {
       question: "Little Women\" is set during this war",
       pointValue: 400,
       potentialAnswers: ["The Civil War", "WWI", "WWII", "1812"],
-      answer: "the Civil War",
+      answer: "The Civil War",
       categoryId: 6
     },
     {
@@ -541,142 +542,142 @@ const data = {
     },
     {
       question: 'Go directly to jail',
-      answer: 'Monopoly',
-      potentialAnswers: ["Monopoly", "jeopardy", "Scrabble", "Chess"],
       pointValue: 100,
+      potentialAnswers: ["Monopoly", "jeopardy", "Scrabble", "Chess"],
+      answer: 'Monopoly',
       categoryId: 5
     },
     {
       question: 'King me!',
-      answer: 'Checkers',
-      potentialAnswers: ["Checkers", "Chess", "Monopoly", "Risk"],
       pointValue: 200,
+      potentialAnswers: ["Checkers", "Chess", "Monopoly", "Risk"],
+      answer: 'Checkers',
       categoryId: 5
     },
     {
       question: 'Miss Scarlet in the library with the wrench',
-      answer: 'Clue',
-      potentialAnswers: ["Clue", "Risk", "Monopoly", "Sorry"],
       pointValue: 300,
+      potentialAnswers: ["Clue", "Risk", "Monopoly", "Sorry"],
+      answer: 'Clue',
       categoryId: 5
     },
     {
       question: 'You sank my aircraft carrier!',
-      answer: 'Battleship',
-      potentialAnswers: ["Monopoly", "Battleship", "Chess", "Top Gun"],
       pointValue: 400,
+      potentialAnswers: ["Monopoly", "Battleship", "Chess", "Top Gun"],
+      answer: 'Battleship',
       categoryId: 5
     },
     {
       question: 'My wink is nearest the pot.  I\'ve won the squidge-off!',
-      answer: 'tiddlywinks',
-      potentialAnswers: ["tiddlywinks", "sticks and stones", "dice", "chess"],
       pointValue: 400,
+      potentialAnswers: ["tiddlywinks", "sticks and stones", "dice", "chess"],
+      answer: 'tiddlywinks',
       categoryId: 5
     },
     {
       question: 'IDEA is the Individuals with these Education Act, formerly the Education For All Handicapped Children Act',
-      answer: 'Disabilities',
-      potentialAnswers: ["Disabilities", "right handed", "left handed", "all"],
       pointValue: 100,
+      potentialAnswers: ["Disabilities", "right handed", "left handed", "all"],
+      answer: 'Disabilities',
       categoryId: 4
     },
     {
       question: '65 out of 100 students did the same as or worse than you if your grade is in the 65th of these',
-      answer: 'percentile',
-      potentialAnswers: ["percentile", "Cs get degrees", "not good enough", "repeat your mod"],
       pointValue: 200,
+      potentialAnswers: ["percentile", "Cs get degrees", "not good enough", "repeat your mod"],
+      answer: 'percentile',
       categoryId: 4
     },
     {
       question: 'It\'s the rhyming term for the technique of teaching with only a blackboard to help you',
-      answer: 'chalk talk/chalk and talk',
-      potentialAnswers: ["chalk talk/chalk and talk", "dusty hands and talking hands", "not it", "nope"],
       pointValue: 300,
+      potentialAnswers: ["chalk talk/chalk and talk", "dusty hands and talking hands", "not it", "nope"],
+      answer: 'chalk talk/chalk and talk',
       categoryId: 4
     },
     {
       question: 'From the Latin for "to heal", it\'s the type of education that brings deficient students up to standard levels',
-      answer: 'remedial',
-      potentialAnswers: ["remedial", "repeat", "not good enough", "retry"],
       pointValue: 400,
+      potentialAnswers: ["remedial", "repeat", "not good enough", "retry"],
+      answer: 'remedial',
       categoryId: 4
     },
     {
       question: 'These 2 words, denoting socioeconomically challenged, followed "A Nation" in a 1983 report\'s title',
-      answer: 'At Risk',
-      potentialAnswers: ["At Risk", "Not Good", "Almost there", "watch out"],
       pointValue: 400,
+      potentialAnswers: ["At Risk", "Not Good", "Almost there", "watch out"],
+      answer: 'At Risk',
       categoryId: 4
     },
     {
       question: 'A 1992 law introduced by Sen. Cranston aimed to reduce the use of paint containing too much of this element',
-      answer: 'lead',
-      potentialAnswers: ["lead", "cancer", "peanut butter", "children"],
       pointValue: 100,
+      potentialAnswers: ["lead", "cancer", "peanut butter", "children"],
+      answer: 'lead',
       categoryId: 3
     },
     {
       question: 'An effort lasting from 1985 to 1991 eliminated this paralytic illness from Latin America',
-      answer: 'polio',
-      potentialAnswers: ["polio", "aids", "cancer", "blindness"],
       pointValue: 200,
+      potentialAnswers: ["polio", "aids", "cancer", "blindness"],
+      answer: 'polio',
       categoryId: 3
     },
     {
       question: 'Hi!  I\'m CNN senior medical correspondent Dr. Sanjay Gupta.  I joined CNN in 2001 & reported on the biological attacks of this bacillus in the news that October',
-      answer: 'anthrax',
-      potentialAnswers: ["anthrax", "vicodin", "that blue pill", "ricin"],
       pointValue: 300,
+      potentialAnswers: ["anthrax", "vicodin", "PBR", "ricin"],
+      answer: 'anthrax',
       categoryId: 3
     },
     {
       question: 'Stanford\'s med school has a division of this, the study & control of disease in populations',
-      answer: 'epidemiology',
-      potentialAnswers: ["epidemiology", "cancer", "aids", "feet"],
       pointValue: 400,
+      potentialAnswers: ["epidemiology", "cancer", "aids", "feet"],
+      answer: 'epidemiology',
       categoryId: 3
     },
     {
       question: 'Also a type of mathematical quantity, it\'s a term for disease-carrying critters like ticks',
-      answer: 'a vector',
-      potentialAnswers: ["a vector", "a victor", "quantify", "percentile"],
       pointValue: 400,
+      potentialAnswers: ["a vector", "a victor", "quantify", "percentile"],
+      answer: 'a vector',
       categoryId: 3
     },
     {
       question: 'Organic chemistry focuses specifically on this element\'s compounds & their reactions',
-      answer: 'carbon',
-      potentialAnswers: ["carbon", "oxygen", "hydrogen", "iron"],
       pointValue: 100,
+      potentialAnswers: ["carbon", "oxygen", "hydrogen", "iron"],
+      answer: 'carbon',
       categoryId: 2
     },
     {
       question: 'If you\'re a steak & veggies creature, you\'re an omnivore, a combination of these other 2 basic "-vores',
-      answer: 'carnivore and herbivore',
-      potentialAnswers: ["carnivore and herbivore", "meatavore and potatoeavore", "both", "none"],
       pointValue: 200,
+      potentialAnswers: ["carnivore and herbivore", "meatavore and potatoeavore", "both", "none"],
+      answer: 'carnivore and herbivore',
       categoryId: 2
     },
     {
       question: 'In humans this collection of nerves extends from the base of the skull to the second lumbar vertebra',
-      answer: 'spinal cord',
-      potentialAnswers: ["spinal cord", "brain", "arms", "all"],
       pointValue: 300,
+      potentialAnswers: ["spinal cord", "brain", "arms", "all"],
+      answer: 'spinal cord',
       categoryId: 2
     },
     {
       question: '(<a href="http://www.j-archive.com/media/2009-04-28_DJ_22.wmv">Jimmy of the Clue Crew gets in his workout.</a>)  Physical activity increases both body temperature & this process in which food is converted to protein, carbs & fat & then used for energy',
-      answer: 'metabolism',
-      potentialAnswers: ["metabolism", "sweating", "dying", "soreness"],
       pointValue: 400,
+      potentialAnswers: ["metabolism", "sweating", "dying", "soreness"],
+      answer: 'metabolism',
       categoryId: 2
     },
     {
       question: 'Alimentary, my dear! waves of contractions moving swallowed food through the esophagus are called this',
-      answer: 'peristalsis',
-      potentialAnswers: ["peristalsis", "swallowed", "swallowing", "yummy"],
       pointValue: 400,
+      potentialAnswers: ["peristalsis", "swallowed", "swallowing", "yummy"],
+      answer: 'peristalsis',
       categoryId: 2
     },
     {
@@ -788,7 +789,7 @@ const data = {
       question: "In 1787 Patrick Henry refused to go to this convention; it's said that he \"smelt a rat",
       pointValue: 100,
       potentialAnswers: ["The Constitutional Convention", "New York Yankees", "Sales Convention", "Meat Packers Convention"],
-      answer: "the Constitutional Convention",
+      answer: "The Constitutional Convention",
       categoryId: 1
     },
     {
