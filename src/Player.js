@@ -12,11 +12,11 @@ class Player {
     this.score += boxInfo.pointValue * i;
   }
 
-  ddWrong(i) {
+  ddWrong(boxInfo, i) {
     this.score -= (i * 2);
   }
 
-  ddCorrect(i) {
+  ddCorrect(boxInfo, i) {
     this.score += (i * 2);
   }
 }
