@@ -65,16 +65,20 @@ export default {
     
     if ((ansText === answer) && (game.round.roundCounter === game.round.dDouble)) {
       game.currentPlayer.ddCorrect(boxInfo, game.round.wager);
+      game.getImageTag(game.correctImages);
       $('.correctAns').removeClass('hidden');
     } else if ((ansText !== answer) && (game.round.roundCounter === game.round.dDouble)) {
       game.currentPlayer.ddWrong(boxInfo, game.round.wager);
+      game.getImageTag(game.wrongImages);
       $('.wrongAns').removeClass('hidden');
       game.updatePlayerTurn();
     } else if (ansText === answer) {
       game.round.stage === 1 ? game.currentPlayer.correct(boxInfo, 1) : game.currentPlayer.correct(boxInfo, 2);
+      game.getImageTag(game.correctImages);
       $('.correctAns').removeClass('hidden');
     } else {
       game.round.stage === 1 ? game.currentPlayer.wrong(boxInfo, 1) : game.currentPlayer.wrong(boxInfo, 2);
+      game.getImageTag(game.wrongImages);
       $('.wrongAns').removeClass('hidden');
       game.updatePlayerTurn();
     }
@@ -122,6 +126,20 @@ export default {
       game.round.gameBoardTargeter(boxId, game);
     })
   },
+
+
+  // getImageTag() {
+  //   let imageURLs = [
+  //        "https://i.imgur.com/0AYPvgcm.jpg"
+  //      , "hhttps://i.imgur.com/bl7HSfNm.jpg"
+  //      , "https://i.imgur.com/Xcb3v1pm.jpg"
+  //   ];
+  //   let img = '<img src=\"';
+  //   let randomIndex = Math.floor(Math.random() * imageURLs.length);
+  //   img += imageURLs[randomIndex];
+  //   img += '\" alt=\"Some alt text\"/>';
+  //   return img;
+  // },
         
   resetGame() {
     location.reload();

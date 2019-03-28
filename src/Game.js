@@ -2,6 +2,7 @@ import domUpdates from './domUpdates.js';
 import data from './data.js';
 import Round from './Round.js';
 import Player from './Player.js';
+import $ from 'jquery';
 
 class Game {
   constructor() {
@@ -10,6 +11,8 @@ class Game {
     this.round = new Round();
     this.currentPlayer = {};
     this.playerIndex = 0;
+    this.wrongImages = [];
+    this.correctImages = [];
   }
 
   startGame(game) {
@@ -19,6 +22,7 @@ class Game {
     this.getRandomData();
     this.round.sortRounds(this.allData);
     this.updatePlayerTurn();
+    this.grabImages();
   }
 
   getRandomData() {
@@ -53,7 +57,26 @@ class Game {
       return
     }
     this.playerIndex++;
-  } 
+  }
+
+  grabImages() {
+    const wrongImages = Object.keys(data.wrongImg).map(url => {
+      return url;
+    });
+    const correctImages = Object.keys(data.correctImg).map(url => {
+      return url;
+    })
+    this.wrongImages = wrongImages;
+    this.correctImages = correctImages;
+  }
+
+  getImageTag(images) {
+    let img = '<img src=\"';
+    let randomIndex = Math.floor(Math.random() * images.length);
+    img += images[randomIndex];
+    img += '\" alt=\"Wrong\"/>';
+    $('.image').html(img);
+  }
 
   reset() {
     domUpdates.resetGame();

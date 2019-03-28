@@ -7,7 +7,7 @@
 </head>
 <body>
   <section class="start-page">
-    <img src="https://i.imgur.com/ROXpBHv.png" class="start-screen-title" height=400px width=2500px>
+    <img src="https://i.imgur.com/ROXpBHv.png?1" class="start-screen-title" height=400px width=2500px>
     <h2 class="select-nerds">Select Your Nerds:</h2>
     <section class="players">
       <div class="nerd">
@@ -17,7 +17,7 @@
         </label>
       </div>  
       <div class="nerd">
-        <img class="nerd-img" src="https://i.imgur.com/kdsS6rZ.jpg" alt="Orge from revenge of the nerds"><br>
+        <img class="nerd-img" src="https://i.imgur.com/O7Q5jfR.jpg?1" alt="Orge from revenge of the nerds"><br>
         <label for="player2" class="name-label"><br>
           <input type="text" name="player2" class="player2" id="name-input">
         </label>
@@ -29,7 +29,7 @@
         </label>
       </div>  
     </section>
-    <section class="btn">
+    <section class="btn-container">
       <input class="play-game-btn" type="submit" disabled='disabled'></input>
     </section>
   </section>
@@ -116,17 +116,17 @@
   <section class="player-section hidden">
     <section data-index="30" id="100" class="player 0 player-turn">
       <img class="nerd-img" src="https://i.imgur.com/o1IfnLG.jpg" alt="Lewis from revenge of the nerds">
-      <h3 class="player-1-name name-label">Name:</h3>
+      <h3 class="player-1-name player-name"></h3>
       <h3 class="player-score" id="player-0-total">Score:</h3>
     </section>
     <section data-index="31" id="101" class="player 1">
-      <img class="nerd-img" src="https://i.imgur.com/kdsS6rZ.jpg" alt="Orge from revenge of the nerds">
-      <h3 class="player-2-name name-label">Name:</h3>
+      <img class="nerd-img" src="https://i.imgur.com/O7Q5jfR.jpg?1" alt="Orge from revenge of the nerds">
+      <h3 class="player-2-name player-name"></h3>
       <h3 class="player-score" id="player-1-total">Score:</h3>
     </section>
     <section data-index="32" id="102" class="player 2"> 
       <img class="nerd-img" src="https://i.imgur.com/c7Bfxuq.jpg" alt="Judy from revenge of the nerds">
-      <h3 class="player-3-name name-label">Name:</h3>
+      <h3 class="player-3-name player-name"></h3>
       <h3 class="player-score" id="player-2-total">Score:</h3>
     </section>
   </section>
@@ -135,6 +135,7 @@
 
   <section class="correctAns hidden">
     <h1>CORRECT!</h1>
+    <picture class="image"></picture>
     <div class="next-btn">
       <button class="next-question">Choose your next question</button>
     </div>
@@ -142,6 +143,7 @@
 
   <section class="wrongAns hidden">
     <h1>WRONG!</h1>
+    <picture class="image"></picture>
     <div class="next-btn">
       <button class="next-turn">Next player</button>
     </div>

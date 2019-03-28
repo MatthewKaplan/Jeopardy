@@ -30,8 +30,20 @@ h2 {
   margin-top: 0;
 }
 
-.rick {
-  display: flex;
+.start-screen-title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.select-nerds {
+  -webkit-text-stroke: .75px black;
+  margin-top: 35px;
+}
+
+.name-label::before {
+  content: "Nerd Name: ";
 }
 
 .players {
@@ -70,7 +82,7 @@ input {
   width: 200px;
 }
 
-.btn {
+.btn-container {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -235,7 +247,18 @@ input {
   width: 500px;
 }
 
-.potential-answers,
+.next-turn {
+  width: 650px;
+}
+
+.potential-answers {
+  max-width: 1418px;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .next-btn {
   align-content: center;
   display: flex;
@@ -270,25 +293,13 @@ input {
   font-size: 150px;
 }
 
-.start-screen-title {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.image {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.select-nerds {
-  -webkit-text-stroke: .75px black;
-  margin-top: 70px;
+.image img {
+  height: 400px;
+  width: 550px;
 }
-
-.name-label::before {
-  content: "Nerd Name: ";
-}
-
-
-
-
-
-
-
