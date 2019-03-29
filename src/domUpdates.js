@@ -123,10 +123,9 @@ export default {
               <h3 class="player-score player-score-dd" id="player-total">Score: ${game.currentPlayer.score} </h3>
             </section>
                 <label class="wager" for="wager-input">
-                  Please enter your wager:
-                  <input type="number" class="wager-input">
+                  <input type="number" class="wager-input" placeholder= "Please enter a wager between 5 and your current score">
                 </label><br>
-                <button class="wager-button disabled="disabled">Submit Wager</button>
+                <button class="wager-button" disabled="disabled">Submit Wager</button>
           </section>`;
     $('.wager-display').html(playerWager);
 
@@ -134,12 +133,12 @@ export default {
       if ($('.wager-input').val() === '' || $('.wager-input').val() < 5 || $('.wager-input').val() > game.currentPlayer.score) {
         $('.wager-button').prop('disabled', true);
       } else {
-        $('.wager-button').prop('disabled', false);
-        $('.wager-button').on('click', () => {
-        game.round.wager = $('.wager-input').val();
-        $('.wager-display').addClass('hidden');
-        game.round.gameBoardTargeter(boxId, game);
-      })
+          $('.wager-button').prop('disabled', false);
+          $('.wager-button').on('click', () => {
+          game.round.wager = $('.wager-input').val();
+          $('.wager-display').addClass('hidden');
+          game.round.gameBoardTargeter(boxId, game);
+        })
       }
     });
   },

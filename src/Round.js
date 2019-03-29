@@ -42,7 +42,7 @@ class Round {
   }
 
   questionCounter(game) {
-    this.roundCounter--;
+    // this.roundCounter--;
     if (this.roundCounter === 0) {
       this.stage++;
       domUpdates.doubleBoardPoints();

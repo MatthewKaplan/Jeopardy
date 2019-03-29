@@ -32,8 +32,6 @@ $(function () {
 
 
 $('.questions-container').on('click', '.box', () => {
-  console.log('roundCounter', game.round.roundCounter);
-  console.log('dDouble', game.round.dDouble);
   if (game.round.roundCounter === game.round.dDouble) {
     let boxId = event.target.parentElement.id;
     domUpdates.wager(event, game, boxId);
@@ -55,6 +53,7 @@ $('.correctAns').on('click', '.next-question', () => {
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
   domUpdates.updateScores(game);
+  game.round.roundCounter--;
   game.round.questionCounter(game);
 });
 
@@ -63,6 +62,7 @@ $('.wrongAns').on('click', '.next-turn', () => {
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
   domUpdates.updateScores(game);
+  game.round.roundCounter--;
   game.round.questionCounter(game);
 });
 

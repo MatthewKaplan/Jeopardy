@@ -276,13 +276,18 @@ input {
   justify-content: space-around;
 }
 
-.wager-button:hover,
+.wager-button,
 .play-game-btn:hover,
 .reset-btn:hover,
 .next-question:hover,
 .box:hover,
 .ans-btn:hover,
 .next-turn:hover {
+  background-image: linear-gradient(to top, #57719b, #42649b);
+  cursor: pointer;
+}
+
+.wager-hover:hover {
   background-image: linear-gradient(to top, #57719b, #42649b);
   cursor: pointer;
 }
@@ -375,4 +380,30 @@ input {
 .player-score-dd {
   margin-bottom: 100px;
 }
+
+.wager-input {
+  height: 60px;
+  width: 457px;
+  font-size: 18px;
+}
+
+.wager-button:disabled {
+  cursor: default;
+  border: solid red 3px;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
