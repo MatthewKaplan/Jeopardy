@@ -1,6 +1,5 @@
 import domUpdates from './domUpdates.js';
 import Categories from './Categories.js';
-import $ from 'jquery';
 
 class Round {
   constructor() {
@@ -42,13 +41,14 @@ class Round {
   }
 
   questionCounter(game) {
-    // this.roundCounter--;
+    this.roundCounter--;
     if (this.roundCounter === 0) {
       this.stage++;
       domUpdates.doubleBoardPoints();
       this.roundCounter = 16;
       this.dDouble = this.dailyDoubleIndex();
       domUpdates.switchRound(game);
+      this.gameBoardTargeter(this.currentQuestion, game);
     }
   }
 

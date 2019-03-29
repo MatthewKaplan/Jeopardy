@@ -2,7 +2,6 @@ import domUpdates from './domUpdates.js';
 import data from './data.js';
 import Round from './Round.js';
 import Player from './Player.js';
-import $ from 'jquery';
 
 class Game {
   constructor() {
