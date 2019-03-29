@@ -11,6 +11,7 @@ export default {
     $('.wrongAns').addClass('hidden');
     $('.question-display').addClass('hidden');
     $('.wager-display').addClass('hidden');
+    $('.final-wager-display').addClass('hidden');
   },
 
   grabNames() {
@@ -111,23 +112,35 @@ export default {
     $('.wager-display').removeClass('hidden');
     $('.game').addClass('hidden');
 
+    console.log(game.currentPlayer);
+
     var playerWager = `
           <section class="daily-double-prompt">
             <h1 class="question-title daily-double-title">DAILY DOUBLE!</h1>
-              <label class="wager" for="wager-input">
-                Please enter your wager:
-                <input type="number" class="wager-input">
-              </label><br>
-              <button class="wager-button">Submit Wager</button>
+            <section class="center-final">
+              <img class="nerd-img" src=${game.currentPlayer.playerImage}><br>
+              <h3 class="player-name player-name-dd"> ${game.currentPlayer.name}</h3>
+              <h3 class="player-score player-score-dd" id="player-total">Score: ${game.currentPlayer.score} </h3>
+            </section>
+                <label class="wager" for="wager-input">
+                  <input type="number" class="wager-input" placeholder= "Please enter a wager between 5 and your current score">
+                </label><br>
+                <button class="wager-button" disabled="disabled">Submit Wager</button>
           </section>`;
     $('.wager-display').html(playerWager);
-    $('.wager-button').on('click', () => {
-      game.round.wager = $('.wager-input').val();
 
-      console.log($('.wager-input').val());
-      $('.wager-display').addClass('hidden');
-      game.round.gameBoardTargeter(boxId, game);
-    })
+    $('.wager-input').keyup(function () {
+      if ($('.wager-input').val() === '' || $('.wager-input').val() < 5 || $('.wager-input').val() > game.currentPlayer.score) {
+        $('.wager-button').prop('disabled', true);
+      } else {
+          $('.wager-button').prop('disabled', false);
+          $('.wager-button').on('click', () => {
+          game.round.wager = $('.wager-input').val();
+          $('.wager-display').addClass('hidden');
+          game.round.gameBoardTargeter(boxId, game);
+        })
+      }
+    });
   },
 
   appendPhoto(img) {
@@ -138,6 +151,86 @@ export default {
     $('.box-title').removeClass('hidden');
     $('.round-num').text(2);
     this.displayCategories(game, game.round.roundTwo);
+  },
+
+  roundThree(boxId, game, round) {
+    $('.game').addClass('hidden');
+    $('.final-wager-display').removeClass('hidden');
+    $('.player-section').removeClass('hidden');
+
+    var finalWager = 
+    `<section class="center-final">
+      <h1 class="question-title final-jeopardy-title">FINAL JEOPARDY</h1>
+        <h4 class="cat-0 final-jeopardy-cat"></h4>
+        <button class="final-wager-button">Place your bets!</button>
+    </section>
+      <div class= "final-wager-input">
+        <input type="number" class="player 0 wager" placeholder="${game.players[0].name.toUpperCase()}, Enter Your Wager Here">
+        <input type="number" class="player 1 wager" placeholder="${game.players[1].name.toUpperCase()}, Enter Your Wager Here">
+        <input type="number" class="player 2 wager" placeholder="${game.players[2].name.toUpperCase()}, Enter Your Wager Here">
+      </div>`;
+    $('.final-wager-display').html(finalWager);
+    $('.final-wager-button').on('click', () => {
+      game.players[0].playerWager = $('.player.0.wager').val()
+      game.players[1].playerWager = $('.player.1.wager').val()
+      game.players[2].playerWager = $('.player.2.wager').val()
+      this.roundThreeQuestion(boxId, game, round);
+    })   
+  },
+
+  roundThreeQuestion(boxId, game, round) {
+    var finalQuestion = `
+    <section class="center-final">
+    <h1 class="question-title final-jeopardy-title">FINAL JEOPARDY</h1>
+    <h4 class="cat-0 final-jeopardy-cat">${round.question}</h4>
+      <button class="final-submit-button">Submit Answers</button>
+    </section>
+    <div class="final-wager-input">
+      <input type="password" class="player 0 guess" placeholder="${game.players[0].name.toUpperCase()}, Enter Your Answer Here">
+      <input type="password" class="player 1 guess" placeholder="${game.players[1].name.toUpperCase()}, Enter Your Answer Here">
+      <input type="password" class="player 2 guess" placeholder="${game.players[2].name.toUpperCase()}, Enter Your Answer Here">
+    </div>`;
+    $('.final-wager-display').html(finalQuestion);
+    $('.final-submit-button').on('click', () => {
+      game.players[0].playerAnswer = $('.player.0.guess').val();
+      game.players[1].playerAnswer = $('.player.1.guess').val();
+      game.players[2].playerAnswer = $('.player.2.guess').val();
+      this.finalAnswer(boxId, game, round);
+    })
+  },
+
+  finalAnswer(boxId, game, round) {
+    game.players.forEach(player => {
+      if (player.playerAnswer.toLowerCase() === round.answer.toLowerCase()) {
+        player.score += player.playerWager * 2;
+      } else {
+        player.score -= player.playerWager * 2;
+      }
+    })
+    round.winner = game.players.reduce((acc, player) => acc.score > player.score ? acc : player )
+    var finalWinner = 
+    `<section class="center-final">
+    <h1 class="question-title final-jeopardy-title">FINAL JEOPARDY</h1>
+    <h4 class="cat-0 final-jeopardy-cat">${round.question}</h4>
+    <p class="final-jeopardy-cat">THE ANSWER:</p>
+    <h4 class="cat-0 final-jeopardy-cat">${round.answer}</h4>
+      <button class="final-winner-button final-submit-button">WINNER???</button>
+    </section>`;
+    $('.final-wager-display').html(finalWinner);
+    this.updateScores(game);
+    $('.final-winner-button').on('click', () => {
+      this.winner(round);
+    })
+  },
+
+  winner (round) {
+    var finalWinner = 
+    `<section class="final-question-display">
+    <h1 class="question-title final-jeopardy-title">FINAL JEOPARDY</h1>
+    <p class="final-jeopardy-cat">THE WINNER IS</p>
+    <h1 class="cat-0. winner-name">${round.winner.name.toUpperCase()}</h1>
+    </section>`;
+    $('.final-wager-display').html(finalWinner);
   },
 
   resetGame() {

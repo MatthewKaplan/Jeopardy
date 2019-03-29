@@ -181,6 +181,10 @@ input {
   width: 100px;
 }
 
+.player-name {
+  text-transform: capitalize;
+}
+
 .player-section {
   background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
   display: flex;
@@ -190,6 +194,7 @@ input {
   margin-top: 0px;
   padding-right: 70px;
   padding-top: 20px;
+  height: 50vh;
 }
 
 .player-turn {
@@ -226,7 +231,8 @@ input {
   margin: auto;
 }
 
-.question-title {
+.question-title,
+.final-jeopardy-cat {
   color: #FFEEB7;
   font-size: 30px;
   padding-top: 30px;
@@ -236,7 +242,10 @@ input {
 .wager-button,
 .next-question,
 .next-turn,
-.ans-btn {
+.ans-btn,
+.final-wager-button,
+.final-submit-button,
+.final-winner-button {
   background-color: #1C7CAE;
   border-radius: 25px;
   border: none;
@@ -267,13 +276,18 @@ input {
   justify-content: space-around;
 }
 
-.wager-button:hover,
+.wager-button,
 .play-game-btn:hover,
 .reset-btn:hover,
 .next-question:hover,
 .box:hover,
 .ans-btn:hover,
 .next-turn:hover {
+  background-image: linear-gradient(to top, #57719b, #42649b);
+  cursor: pointer;
+}
+
+.wager-hover:hover {
   background-image: linear-gradient(to top, #57719b, #42649b);
   cursor: pointer;
 }
@@ -289,9 +303,11 @@ input {
   flex-direction: column;
 }
 
-.daily-double-title {
+.daily-double-title,
+.final-jeopardy-title {
   -webkit-text-stroke: .75px black;
   font-size: 150px;
+  margin-bottom: 50px;
 }
 
 .image {
@@ -314,4 +330,80 @@ input {
 .play-game-btn:disabled {
   cursor: default;
 }
+
+.final-jeopardy-cat {
+  font-size: 70px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.final-wager-display {
+  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+}
+
+.center-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.final-jeopardy-title,
+.winner-name {
+  margin-bottom: 0;
+}
+
+.final-wager-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.final-wager-input input {
+  height: 50px;
+  width: 250px;
+  font-size: 15px;
+}
+
+.final-wager-button,
+.final-submit-button,
+.final-winner-button {
+  margin-bottom: 100px;
+}
+
+.player-name-dd {
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.player-score-dd {
+  margin-bottom: 100px;
+}
+
+.wager-input {
+  height: 60px;
+  width: 457px;
+  font-size: 18px;
+}
+
+.wager-button:disabled {
+  cursor: default;
+  border: solid red 3px;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

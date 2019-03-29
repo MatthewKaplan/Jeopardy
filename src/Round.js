@@ -22,7 +22,7 @@ class Round {
     let finalRoundArr = dataArr.splice(0, 1);
     this.roundOne = this.createRounds(roundOneArr, 1, 5, 100).flat();
     this.roundTwo = this.createRounds(roundTwoArr, 1, 5, 100).flat();
-    this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400);
+    this.finalRound = this.createRounds(finalRoundArr, 1, 2, 400).flat();
     this.dDouble = this.dailyDoubleIndex();
   }
 
@@ -41,22 +41,25 @@ class Round {
     return roundArr;
   }
 
-  gameBoardTargeter(boxId, game) {
-    if (this.stage === 1) {
-      domUpdates.gameBoardListener(boxId, game, this.roundOne);
-    } else {
-      domUpdates.gameBoardListener(boxId, game, this.roundTwo);
-    } 
-  }
-
   questionCounter(game) {
-    this.roundCounter--;
+    // this.roundCounter--;
     if (this.roundCounter === 0) {
       this.stage++;
       domUpdates.doubleBoardPoints();
       this.roundCounter = 16;
       this.dDouble = this.dailyDoubleIndex();
       domUpdates.switchRound(game);
+    }
+  }
+
+  gameBoardTargeter(boxId, game) {
+    if (this.stage === 1) {
+      domUpdates.gameBoardListener(boxId, game, this.roundOne);
+    } else if (this.stage === 2) {
+      domUpdates.gameBoardListener(boxId, game, this.roundTwo);
+    } else {
+      domUpdates.roundThree(boxId, game, this.finalRound[0]);
+      domUpdates.displayCategories(game, this.finalRound);
     }
   }
 
