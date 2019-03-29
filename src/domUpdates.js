@@ -111,9 +111,6 @@ export default {
     $('.player-section').addClass('hidden');
     $('.wager-display').removeClass('hidden');
     $('.game').addClass('hidden');
-
-    console.log(game.currentPlayer);
-
     var playerWager = `
           <section class="daily-double-prompt">
             <h1 class="question-title daily-double-title">DAILY DOUBLE!</h1>
@@ -210,11 +207,11 @@ export default {
     round.winner = game.players.reduce((acc, player) => acc.score > player.score ? acc : player )
     var finalWinner = 
     `<section class="center-final">
-    <h1 class="question-title final-jeopardy-title">FINAL JEOPARDY</h1>
-    <h4 class="cat-0 final-jeopardy-cat">${round.question}</h4>
-    <p class="final-jeopardy-cat">THE ANSWER:</p>
-    <h4 class="cat-0 final-jeopardy-cat">${round.answer}</h4>
-      <button class="final-winner-button final-submit-button">WINNER???</button>
+      <h1 class="question-title final-jeopardy-title">FINAL JEOPARDY</h1>
+      <h4 class="cat-0 final-jeopardy-cat">${round.question}</h4>
+      <p class="final-jeopardy-cat">THE ANSWER:</p>
+      <h4 class="cat-0 final-jeopardy-cat">${round.answer}</h4>
+        <button class="final-winner-button final-submit-button">WINNER???</button>
     </section>`;
     $('.final-wager-display').html(finalWinner);
     this.updateScores(game);
