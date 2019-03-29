@@ -159,9 +159,9 @@ input {
 }
 
 .box-title {
-  font-size: 45px;
-  height: 25px;
-  margin-bottom: 25px;
+  font-size: 64px;
+  height: 80px;
+  margin-bottom: 0px;
 }
 
 .questions-container {
