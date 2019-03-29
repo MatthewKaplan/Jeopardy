@@ -126,14 +126,22 @@ export default {
                   Please enter your wager:
                   <input type="number" class="wager-input">
                 </label><br>
-                <button class="wager-button">Submit Wager</button>
+                <button class="wager-button disabled="disabled">Submit Wager</button>
           </section>`;
     $('.wager-display').html(playerWager);
-    $('.wager-button').on('click', () => {
-      game.round.wager = $('.wager-input').val();
-      $('.wager-display').addClass('hidden');
-      game.round.gameBoardTargeter(boxId, game);
-    })
+
+    $('.wager-input').keyup(function () {
+      if ($('.wager-input').val() === '' || $('.wager-input').val() < 5 || $('.wager-input').val() > game.currentPlayer.score) {
+        $('.wager-button').prop('disabled', true);
+      } else {
+        $('.wager-button').prop('disabled', false);
+        $('.wager-button').on('click', () => {
+        game.round.wager = $('.wager-input').val();
+        $('.wager-display').addClass('hidden');
+        game.round.gameBoardTargeter(boxId, game);
+      })
+      }
+    });
   },
 
   appendPhoto(img) {
