@@ -20,6 +20,16 @@ $('.play-game-btn').on('click', function(e) {
   domUpdates.displayCategories(game, game.round.roundOne);
 });
 
+// $(function () {
+//   $('.wager').keyup(function () {
+//     if ($('.wager').val() === '' || $('.wager').val() < 5 || $('.wager').val() > game.currentPlayer.score) {
+//       $('.wager-button').prop('disabled', true);
+//     } else {
+//       $('.wager-button').prop('disabled', false);
+//     }
+//   });
+// });
+
 $(function () {
   $('.player3, .player2, .player1').keyup(function () {
     if ($('.player1').val() === '' || $('.player2').val() === '' || $('.player3').val() === '') {
@@ -30,7 +40,10 @@ $(function () {
   });
 });
 
+
 $('.questions-container').on('click', '.box', () => {
+  console.log('roundCounter', game.round.roundCounter);
+  console.log('dDouble', game.round.dDouble);
   if (game.round.roundCounter === game.round.dDouble) {
     let boxId = event.target.parentElement.id;
     domUpdates.wager(event, game, boxId);

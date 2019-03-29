@@ -1,8 +1,10 @@
 class Player {
-  constructor(name, score) {
+  constructor(name, score, playerImage) {
     this.name = name;
     this.score = score || 0;
+    this.playerImage = playerImage;
     this.playerWager = 0;
+    this.playerAnswer = "";
   }
 
   wrong(boxInfo, i) {

@@ -41,9 +41,9 @@ class Game {
   }
 
   createPlayers(names) {
-    let player1 = new Player(names[0], 0);
-    let player2 = new Player(names[1], 0);
-    let player3 = new Player(names[2], 0);
+    let player1 = new Player(names[0], 0, "https://i.imgur.com/o1IfnLG.jpg");
+    let player2 = new Player(names[1], 0, "https://i.imgur.com/O7Q5jfR.jpg?1");
+    let player3 = new Player(names[2], 0, "https://i.imgur.com/c7Bfxuq.jpg");
     this.players.push(player1);
     this.players.push(player2);
     this.players.push(player3);
