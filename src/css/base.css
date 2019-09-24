@@ -1,242 +1,243 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
 }
 
 body {
-  margin: auto;
+	margin: auto;
 }
 
 /*Start Page*/
 
 .start-page {
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  height: 100vh;
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	height: 100%;
 }
 
 h1 {
-  color: #FFEEB7;
-  font-size: 70px;
-  margin-top: 0px;
-  padding-top: 30px;
-  text-align: center;
+	color: #ffeeb7;
+	font-size: 70px;
+	margin-top: 0px;
+	padding-top: 30px;
+	text-align: center;
 }
 
 h2 {
-  color: #FFEEB7;
-  font-size: 50px;
-  margin-top: 0;
+	color: #ffeeb7;
+	font-size: 50px;
+	margin-top: 0;
 }
 
 .start-screen-title {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
 }
 
 .select-nerds {
-  -webkit-text-stroke: .75px black;
-  margin-top: 35px;
+	-webkit-text-stroke: .75px black;
+	margin-top: 35px;
 }
 
 .name-label::before {
-  content: "Nerd Name: ";
+	content: "Nerd Name: ";
 }
 
 .players {
-  display: flex;
-  justify-content: space-around;
-  padding-left: 10px;
-  text-align: center;
+	display: flex;
+	justify-content: space-around;
+	padding-left: 10px;
+	text-align: center;
 }
 
 label {
-  color: #FFEEB7;
-  font-size: 30px;
-  margin-top: 0;
+	color: #ffeeb7;
+	font-size: 30px;
+	margin-top: 0;
 }
 
 input {
-  border-radius: 10px;
-  font-size: 22px;
-  height: 30px;
-  width: 200px;
+	border-radius: 10px;
+	font-size: 22px;
+	height: 30px;
+	width: 200px;
 }
 
 .nerd-img {
-  border-radius: 50px;
-  height: 150px;
-  width: 150px;
+	border-radius: 50px;
+	height: 150px;
+	width: 150px;
 }
 
 .play-game-btn {
-  background-color: #1C7CAE;
-  border-radius: 25px;
-  color: #FFEEB7;
-  font-size: 30px;
-  height: 45px;
-  margin-top: 50px;
-  width: 200px;
+	background-color: #1c7cae;
+	border-radius: 25px;
+	color: #ffeeb7;
+	font-size: 30px;
+	height: 45px;
+	margin-top: 50px;
+	width: 200px;
+	margin-bottom: 50px;
 }
 
 .btn-container {
-  align-items: center;
-  display: flex;
-  justify-content: center;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 }
 
 /*Main Page*/
 
 /*Header*/
 .header-bar {
-  align-content: center;
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  display: flex;
-  flex-direction: row;
-  height: 60px; 
-  justify-content: space-between;
+	align-content: center;
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	display: flex;
+	flex-direction: row;
+	height: 60px;
+	justify-content: space-between;
 }
 
 .round {
-  color: #FFEEB7;
-  font-size: 25px;
-  margin-left: 20px;
-  margin-top: 10px;
+	color: #ffeeb7;
+	font-size: 25px;
+	margin-left: 20px;
+	margin-top: 10px;
 }
 
 .main-title {
-  color: #FFEEB7;
-  font-size: 35px;
-  margin-top: 10px;
+	color: #ffeeb7;
+	font-size: 35px;
+	margin-top: 10px;
 }
 
 .reset-btn {
-  background-color: #1C7CAE;
-  border-radius: 25px;
-  color: #FFEEB7;
-  font-size: 20px;
-  height: 30px;
-  margin-right: 20px;
-  margin-top: 20px;
-  text-shadow: .5px .5px 1px #fff;
-  width: 200px;
+	background-color: #1c7cae;
+	border-radius: 25px;
+	color: #ffeeb7;
+	font-size: 20px;
+	height: 30px;
+	margin-right: 20px;
+	margin-top: 20px;
+	text-shadow: .5px .5px 1px #fff;
+	width: 200px;
 }
 
 /*Main*/
 
-.game{
-  background-image:linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  display: grid;
-  grid-template-areas: "gameboard" "player";
-  grid-template-columns: 1fr;
-  padding: 5px;
+.game {
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	display: grid;
+	grid-template-areas: "gameboard" "player";
+	grid-template-columns: 1fr;
+	padding: 5px;
 }
 
-.categories-container{
-  display: grid;
-  grid-auto-flow: row; 
-  grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  margin-bottom: 10px;
+.categories-container {
+	display: grid;
+	grid-auto-flow: row;
+	grid-gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(1, 1fr);
+	margin-bottom: 10px;
 }
 
-.categories-box{
-  background-color: #42649b;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 30px;
-  font-weight: 800;
-  padding: 20px;
-  text-align: center;
+.categories-box {
+	background-color: #42649b;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 30px;
+	font-weight: 800;
+	padding: 20px;
+	text-align: center;
 }
 
 .box-title {
-  font-size: 45px;
-  height: 25px;
-  margin-bottom: 25px;
+	font-size: 45px;
+	height: 25px;
+	margin-bottom: 25px;
 }
 
 .questions-container {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 80px);
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 80px);
 }
 
 .box {
-  background-color: #1C7CAE;
-  border-radius: 5px;
-  border: none;
-  color: #f0e14a;
+	background-color: #1c7cae;
+	border-radius: 5px;
+	border: none;
+	color: #f0e14a;
 }
 
 .player {
-  border-radius: 25px;
-  height: 100px;
-  width: 100px;
+	border-radius: 25px;
+	height: 100px;
+	width: 100px;
 }
 
 .player-name {
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .player-section {
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  display: flex;
-  flex-direction: row;
-  height: 400px;
-  justify-content: space-around;
-  margin-top: 0px;
-  padding-right: 70px;
-  padding-top: 20px;
-  height: 50vh;
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	display: flex;
+	flex-direction: row;
+	height: 400px;
+	justify-content: space-around;
+	margin-top: 0px;
+	padding-right: 70px;
+	padding-top: 20px;
+	height: 50vh;
 }
 
 .player-turn {
-  background-image: linear-gradient(to top, #57719b, #42649b);
-  border-radius: 5px;
-  height: 170px;
-  padding-left: 10px;
-  padding-top: 10px;
-  width: 170px;
+	background-image: linear-gradient(to top, #57719b, #42649b);
+	border-radius: 5px;
+	height: 170px;
+	padding-left: 10px;
+	padding-top: 10px;
+	width: 170px;
 }
 
-.player-score, 
+.player-score,
 .player-name,
 .name-label {
-  color: #FFEEB7;
-  font-size: 30px;
-  width: 200px;
+	color: #ffeeb7;
+	font-size: 30px;
+	width: 200px;
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 
 .question-used {
-  visibility: hidden;
+	visibility: hidden;
 }
 
 .question-display,
 .correctAns,
 .wrongAns,
 .daily-double-prompt {
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  height: 100vh;
-  margin: auto;
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	height: 100vh;
+	margin: auto;
 }
 
 .question-title,
 .final-jeopardy-cat {
-  color: #FFEEB7;
-  font-size: 30px;
-  padding-top: 30px;
-  text-shadow: none;
+	color: #ffeeb7;
+	font-size: 30px;
+	padding-top: 30px;
+	text-shadow: none;
 }
 
 .wager-button,
@@ -246,34 +247,34 @@ input {
 .final-wager-button,
 .final-submit-button,
 .final-winner-button {
-  background-color: #1C7CAE;
-  border-radius: 25px;
-  border: none;
-  color: #FFEEB7;
-  font-size: 40px;
-  height: 200px;
-  margin-top: 50px;
-  width: 500px;
+	background-color: #1c7cae;
+	border-radius: 25px;
+	border: none;
+	color: #ffeeb7;
+	font-size: 40px;
+	height: 200px;
+	margin-top: 50px;
+	width: 500px;
 }
 
 .next-turn,
 .next-question {
-  width: 650px;
+	width: 650px;
 }
 
 .potential-answers {
-  align-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  max-width: 1450px;
+	align-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	max-width: 1450px;
 }
 
 .next-btn {
-  align-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+	align-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .wager-button,
@@ -283,127 +284,200 @@ input {
 .box:hover,
 .ans-btn:hover,
 .next-turn:hover {
-  background-image: linear-gradient(to top, #57719b, #42649b);
-  cursor: pointer;
+	background-image: linear-gradient(to top, #57719b, #42649b);
+	cursor: pointer;
 }
 
 .wager-hover:hover {
-  background-image: linear-gradient(to top, #57719b, #42649b);
-  cursor: pointer;
+	background-image: linear-gradient(to top, #57719b, #42649b);
+	cursor: pointer;
 }
 
 .daily-double-prompt {
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
-  height: 100vh;
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	height: 100vh;
 }
 
 .daily-double-prompt {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .daily-double-title,
 .final-jeopardy-title {
-  -webkit-text-stroke: .75px black;
-  font-size: 150px;
-  margin-bottom: 50px;
+	-webkit-text-stroke: .75px black;
+	font-size: 150px;
+	margin-bottom: 50px;
 }
 
 .image {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .image img {
-  height: 400px;
-  width: 550px;
+	height: 400px;
+	width: 550px;
 }
 
 .center-btns {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .play-game-btn:disabled {
-  cursor: default;
+	cursor: default;
 }
 
 .final-jeopardy-cat {
-  font-size: 70px;
-  margin-top: 35px;
-  margin-bottom: 35px;
-  text-align: center;
+	font-size: 70px;
+	margin-top: 35px;
+	margin-bottom: 35px;
+	text-align: center;
 }
 
 .final-wager-display {
-  background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+	background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
 }
 
 .center-final {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 }
 
 .final-jeopardy-title,
 .winner-name {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .final-wager-input {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .final-wager-input input {
-  height: 50px;
-  width: 250px;
-  font-size: 15px;
+	height: 50px;
+	width: 250px;
+	font-size: 15px;
 }
 
 .final-wager-button,
 .final-submit-button,
 .final-winner-button {
-  margin-bottom: 100px;
+	margin-bottom: 100px;
 }
 
 .player-name-dd {
-  margin-left: 10px;
-  margin-bottom: 0;
+	margin-left: 10px;
+	margin-bottom: 0;
 }
 
 .player-score-dd {
-  margin-bottom: 100px;
+	margin-bottom: 100px;
 }
 
 .wager-input {
-  height: 60px;
-  width: 457px;
-  font-size: 18px;
+	height: 60px;
+	width: 457px;
+	font-size: 18px;
 }
 
 .wager-button:disabled {
-  cursor: default;
-  border: solid red 3px;
-  pointer-events: none;
+	cursor: default;
+	border: solid red 3px;
+	pointer-events: none;
 }
 
+@media screen and (max-width: 1920px) {
+	.categories-box {
+		font-size: 12px;
+		padding: 10px;
+		text-align: center;
+		width: 95px;
+	}
 
+	.categories-container {
+		grid-gap: 5px;
+	}
 
+	.reset-btn {
+		width: 150px;
+	}
 
+	.main-title {
+		display: none;
+	}
 
+	.questions-container {
+		grid-gap: 5px;
+	}
 
+	.nerd-img {
+		height: 100px;
+		width: 100px;
+	}
 
+	.player-turn {
+		height: 120px;
+		width: 120px;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #ffeeb7, #ffeeb7);
+	}
 
+	.player-section {
+		padding-right: 0px;
+	}
 
+	.player-score,
+	.player-name,
+	.name-label {
+		color: #ffeeb7;
+		font-size: 30px;
+		width: 200px;
+		margin-bottom: 0px;
+		margin-top: 0px;
+	}
 
+	.player-section {
+		background-image: linear-gradient(0.25turn, #6f93bd, #9c9fa3, #6f93bd);
+		display: flex;
+		flex-direction: column;
+		height: 400px;
+		justify-content: space-around;
+		margin-top: 0px;
+		padding-right: 70px;
+		padding-top: 0px;
+		height: 50vh;
+	}
 
+	.player-1-name,
+	.player-2-name,
+	.player-3-name {
+		position: relative;
+		left: 115%;
+		bottom: 95%;
+	}
 
+	.player-1-score,
+	.player-2-score,
+	.player-3-score {
+		position: relative;
+		bottom: 70%;
+		left: 115%;
+	}
 
-
-
+	.not-player-turn {
+		background-image: linear-gradient(to top, #57719b, #42649b);
+		border-radius: 50%;
+		height: 120px;
+		padding-left: 10px;
+		padding-top: 10px;
+		width: 120px;
+	}
+}

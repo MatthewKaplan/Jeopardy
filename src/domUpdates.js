@@ -90,12 +90,25 @@ export default {
   playerTurn(currPlayer) {
     $('.player').removeClass('player-turn');
     $(`.player.${currPlayer.playerIndex}`).addClass('player-turn');
+    if (currPlayer.playerIndex === 0) {
+      $(`.player.0`).removeClass('not-player-turn');
+      $(`.player.1`).addClass('not-player-turn');
+      $(`.player.2`).addClass('not-player-turn');
+    } else if (currPlayer.playerIndex === 1) {
+      $(`.player.1`).removeClass('not-player-turn');
+      $(`.player.0`).addClass('not-player-turn');
+      $(`.player.2`).addClass('not-player-turn');
+    } else {
+      $(`.player.2`).removeClass('not-player-turn');
+      $(`.player.0`).addClass('not-player-turn');
+      $(`.player.1`).addClass('not-player-turn');
+    }
   },
 
   updateScores(game) {
     game.players.forEach((player, ind) => {
       $(`#player-${ind}-total`).html(`
-        <h3 class="player-score" id="player-${ind}-total">Score: ${player.score} </h3>
+        <p class="player-score" id="player-${ind}-total">Score: ${player.score} </p>
       `);
     })
   },
@@ -111,8 +124,6 @@ export default {
     $('.player-section').addClass('hidden');
     $('.wager-display').removeClass('hidden');
     $('.game').addClass('hidden');
-
-    console.log(game.currentPlayer);
 
     var playerWager = `
           <section class="daily-double-prompt">
