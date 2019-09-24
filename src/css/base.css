@@ -30,6 +30,10 @@ h2 {
 	margin-top: 0;
 }
 
+input {
+  text-align: center;
+}
+
 .start-screen-title {
 	display: block;
 	margin-left: auto;
@@ -156,9 +160,9 @@ input {
 }
 
 .box-title {
-	font-size: 45px;
-	height: 25px;
-	margin-bottom: 25px;
+  font-size: 64px;
+  height: 80px;
+  margin-bottom: 0px;
 }
 
 .questions-container {
@@ -277,7 +281,7 @@ input {
 	justify-content: space-around;
 }
 
-.wager-button,
+.wager-button:hover,
 .play-game-btn:hover,
 .reset-btn:hover,
 .next-question:hover,
@@ -344,10 +348,10 @@ input {
 }
 
 .center-final {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .final-jeopardy-title,
@@ -362,9 +366,9 @@ input {
 }
 
 .final-wager-input input {
-	height: 50px;
-	width: 250px;
-	font-size: 15px;
+  font-size: 15px;
+  height: 50px;
+  width: 250px;
 }
 
 .final-wager-button,
@@ -388,6 +392,7 @@ input {
 	font-size: 18px;
 }
 
+.play-game-btn:disabled,
 .wager-button:disabled {
 	cursor: default;
 	border: solid red 3px;
@@ -481,3 +486,4 @@ input {
 		width: 120px;
 	}
 }
+

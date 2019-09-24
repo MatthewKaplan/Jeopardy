@@ -30,7 +30,6 @@ $(function () {
   });
 });
 
-
 $('.questions-container').on('click', '.box', () => {
   if (game.round.roundCounter === game.round.dDouble) {
     let boxId = event.target.parentElement.id;
@@ -53,7 +52,6 @@ $('.correctAns').on('click', '.next-question', () => {
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
   domUpdates.updateScores(game);
-  game.round.roundCounter--;
   game.round.questionCounter(game);
 });
 
@@ -62,7 +60,6 @@ $('.wrongAns').on('click', '.next-turn', () => {
   $('.game').removeClass('hidden');
   $('.player-section').removeClass('hidden');
   domUpdates.updateScores(game);
-  game.round.roundCounter--;
   game.round.questionCounter(game);
 });
 
